@@ -1,0 +1,306 @@
+{
+  "Uniform": {
+    "Point-in-Polygon": {
+      "10000000": {
+        "10000000": {
+          "16": {
+            "num_results": [
+              1021602
+            ],
+            "build_index_1_ms": [
+              16061.67
+            ],
+            "build_index_2_ms": [
+              16096.03
+            ],
+            "bfs_static_ms": [
+              1152.43
+            ],
+            "bfs_dfs_static_ms_ms": [
+              1184.47
+            ],
+            "bfs_dynamic_ms": [
+              1445.07
+            ],
+            "bfs_dfs_dynamic_ms": [
+              1102.91
+            ]
+          },
+          "32": {
+            "num_results": [
+              1021602
+            ],
+            "build_index_1_ms": [
+              15841.85
+            ],
+            "build_index_2_ms": [
+              15745.16
+            ],
+            "bfs_static_ms": [
+              1424.31
+            ],
+            "bfs_dfs_static_ms_ms": [
+              2001.8
+            ],
+            "bfs_dynamic_ms": [
+              1771.71
+            ],
+            "bfs_dfs_dynamic_ms": [
+              1854.13
+            ]
+          },
+          "64": {
+            "num_results": [
+              1021602
+            ],
+            "build_index_1_ms": [
+              15782.2
+            ],
+            "build_index_2_ms": [
+              15699.03
+            ],
+            "bfs_static_ms": [
+              2457.3
+            ],
+            "bfs_dfs_static_ms_ms": [
+              3993.87
+            ],
+            "bfs_dynamic_ms": [
+              2649.62
+            ],
+            "bfs_dfs_dynamic_ms": [
+              3500.8
+            ]
+          }
+        }
+      }
+    },
+    "Polygon-Polygon": {
+      "10000000": {
+        "10000000": {
+          "16": {
+            "num_results": [
+              4040818
+            ],
+            "build_index_1_ms": [
+              16120.78
+            ],
+            "build_index_2_ms": [
+              16374.62
+            ],
+            "bfs_static_ms": [
+              1657.29
+            ],
+            "bfs_dfs_static_ms_ms": [
+              1390.27
+            ],
+            "bfs_dynamic_ms": [
+              1959.86
+            ],
+            "bfs_dfs_dynamic_ms": [
+              1369.64
+            ]
+          },
+          "32": {
+            "num_results": [
+              4040818
+            ],
+            "build_index_1_ms": [
+              15793.82
+            ],
+            "build_index_2_ms": [
+              16001.55
+            ],
+            "bfs_static_ms": [
+              1895.46
+            ],
+            "bfs_dfs_static_ms_ms": [
+              2408.75
+            ],
+            "bfs_dynamic_ms": [
+              2168.48
+            ],
+            "bfs_dfs_dynamic_ms": [
+              2376.93
+            ]
+          },
+          "64": {
+            "num_results": [
+              4040818
+            ],
+            "build_index_1_ms": [
+              15671.99
+            ],
+            "build_index_2_ms": [
+              15756.48
+            ],
+            "bfs_static_ms": [
+              3216.31
+            ],
+            "bfs_dfs_static_ms_ms": [
+              4732.12
+            ],
+            "bfs_dynamic_ms": [
+              3396.33
+            ],
+            "bfs_dfs_dynamic_ms": [
+              4534.04
+            ]
+          }
+        }
+      }
+    }
+  },
+  "OSM": {
+    "Point-in-Polygon": {
+      "10000000": {
+        "10000000": {
+          "16": {
+            "num_results": [
+              12407
+            ],
+            "build_index_1_ms": [
+              10624.56
+            ],
+            "build_index_2_ms": [
+              13003.74
+            ],
+            "bfs_static_ms": [
+              618.58
+            ],
+            "bfs_dfs_static_ms_ms": [
+              683.68
+            ],
+            "bfs_dynamic_ms": [
+              739.9
+            ],
+            "bfs_dfs_dynamic_ms": [
+              645.57
+            ]
+          },
+          "32": {
+            "num_results": [
+              12407
+            ],
+            "build_index_1_ms": [
+              10291.25
+            ],
+            "build_index_2_ms": [
+              12705.06
+            ],
+            "bfs_static_ms": [
+              801.07
+            ],
+            "bfs_dfs_static_ms_ms": [
+              1325.02
+            ],
+            "bfs_dynamic_ms": [
+              1068.31
+            ],
+            "bfs_dfs_dynamic_ms": [
+              1170.77
+            ]
+          },
+          "64": {
+            "num_results": [
+              12407
+            ],
+            "build_index_1_ms": [
+              10137.66
+            ],
+            "build_index_2_ms": [
+              12482.55
+            ],
+            "bfs_static_ms": [
+              1471.04
+            ],
+            "bfs_dfs_static_ms_ms": [
+              2493.32
+            ],
+            "bfs_dynamic_ms": [
+              1590.84
+            ],
+            "bfs_dfs_dynamic_ms": [
+              2308.78
+            ]
+          }
+        }
+      }
+    },
+    "Polygon-Polygon": {
+      "10000000": {
+        "10000000": {
+          "16": {
+            "num_results": [
+              292542686
+            ],
+            "build_index_1_ms": [
+              12985.77
+            ],
+            "build_index_2_ms": [
+              13019.82
+            ],
+            "bfs_static_ms": [
+              16638.18
+            ],
+            "bfs_dfs_static_ms_ms": [
+              20052.98
+            ],
+            "bfs_dynamic_ms": [
+              15080.78
+            ],
+            "bfs_dfs_dynamic_ms": [
+              17424.71
+            ]
+          },
+          "32": {
+            "num_results": [
+              292542686
+            ],
+            "build_index_1_ms": [
+              12611.86
+            ],
+            "build_index_2_ms": [
+              12611.36
+            ],
+            "bfs_static_ms": [
+              14618.53
+            ],
+            "bfs_dfs_static_ms_ms": [
+              24501.21
+            ],
+            "bfs_dynamic_ms": [
+              14032.91
+            ],
+            "bfs_dfs_dynamic_ms": [
+              19571.7
+            ]
+          },
+          "64": {
+            "num_results": [
+              292542686
+            ],
+            "build_index_1_ms": [
+              12506.68
+            ],
+            "build_index_2_ms": [
+              12465.37
+            ],
+            "bfs_static_ms": [
+              17022.68
+            ],
+            "bfs_dfs_static_ms_ms": [
+              21171.84
+            ],
+            "bfs_dynamic_ms": [
+              12044.11
+            ],
+            "bfs_dfs_dynamic_ms": [
+              15723.88
+            ]
+          }
+        }
+      }
+    }
+  }
+}

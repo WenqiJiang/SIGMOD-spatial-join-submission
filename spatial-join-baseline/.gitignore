@@ -1,0 +1,5 @@
+*.bin
+a.out
+.vscode
+**__pycache__
+**.nfs*

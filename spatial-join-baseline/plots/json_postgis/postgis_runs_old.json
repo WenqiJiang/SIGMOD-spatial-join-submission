@@ -1,0 +1,542 @@
+{
+  "Uniform": {
+    "Point-in-Polygon": {
+      "100000": {
+        "100000": {
+          "num_results": [
+            97
+          ],
+          "build_index1_time_ms": [
+            154.682
+          ],
+          "build_index2_time_ms": [
+            150.882
+          ],
+          "join_time_ms": [
+            1124.832
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            1059
+          ],
+          "build_index1_time_ms": [
+            157.911
+          ],
+          "build_index2_time_ms": [
+            1623.748
+          ],
+          "join_time_ms": [
+            6790.186
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            10211
+          ],
+          "build_index1_time_ms": [
+            161.135
+          ],
+          "build_index2_time_ms": [
+            18300.298
+          ],
+          "join_time_ms": [
+            66632.67
+          ]
+        }
+      },
+      "1000000": {
+        "100000": {
+          "num_results": [
+            1007
+          ],
+          "build_index1_time_ms": [
+            1642.467
+          ],
+          "build_index2_time_ms": [
+            1392.439
+          ],
+          "join_time_ms": [
+            1626.945
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            10132
+          ],
+          "build_index1_time_ms": [
+            1645.037
+          ],
+          "build_index2_time_ms": [
+            2859.381
+          ],
+          "join_time_ms": [
+            7922.361
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            101624
+          ],
+          "build_index1_time_ms": [
+            1593.814
+          ],
+          "build_index2_time_ms": [
+            18840.058
+          ],
+          "join_time_ms": [
+            21401.111
+          ]
+        }
+      },
+      "10000000": {
+        "100000": {
+          "num_results": [
+            10263
+          ],
+          "build_index1_time_ms": [
+            17800.282
+          ],
+          "build_index2_time_ms": [
+            1669.978
+          ],
+          "join_time_ms": [
+            125834.986
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            102121
+          ],
+          "build_index1_time_ms": [
+            18155.271
+          ],
+          "build_index2_time_ms": [
+            2357.492
+          ],
+          "join_time_ms": [
+            127526.014
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            1021602
+          ],
+          "build_index1_time_ms": [
+            17117.096
+          ],
+          "build_index2_time_ms": [
+            18391.258
+          ],
+          "join_time_ms": [
+            128831.745
+          ]
+        }
+      }
+    },
+    "Polygon-Polygon": {
+      "100000": {
+        "100000": {
+          "num_results": [
+            378
+          ],
+          "build_index1_time_ms": [
+            153.783
+          ],
+          "build_index2_time_ms": [
+            152.945
+          ],
+          "join_time_ms": [
+            1351.315
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            4069
+          ],
+          "build_index1_time_ms": [
+            163.568
+          ],
+          "build_index2_time_ms": [
+            1645.156
+          ],
+          "join_time_ms": [
+            969.126
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            40349
+          ],
+          "build_index1_time_ms": [
+            161.316
+          ],
+          "build_index2_time_ms": [
+            18477.026
+          ],
+          "join_time_ms": [
+            82040.85
+          ]
+        }
+      },
+      "1000000": {
+        "100000": {
+          "num_results": [
+            4071
+          ],
+          "build_index1_time_ms": [
+            1634.959
+          ],
+          "build_index2_time_ms": [
+            1461.981
+          ],
+          "join_time_ms": [
+            1583.829
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            40428
+          ],
+          "build_index1_time_ms": [
+            2313.557
+          ],
+          "build_index2_time_ms": [
+            2891.584
+          ],
+          "join_time_ms": [
+            8516.801
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            403726
+          ],
+          "build_index1_time_ms": [
+            1568.46
+          ],
+          "build_index2_time_ms": [
+            18358.517
+          ],
+          "join_time_ms": [
+            13442.179
+          ]
+        }
+      },
+      "10000000": {
+        "100000": {
+          "num_results": [
+            40646
+          ],
+          "build_index1_time_ms": [
+            16964.0
+          ],
+          "build_index2_time_ms": [
+            2282.848
+          ],
+          "join_time_ms": [
+            81591.671
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            404118
+          ],
+          "build_index1_time_ms": [
+            18165.587
+          ],
+          "build_index2_time_ms": [
+            1601.994
+          ],
+          "join_time_ms": [
+            15265.878
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            4040818
+          ],
+          "build_index1_time_ms": [
+            17077.705
+          ],
+          "build_index2_time_ms": [
+            17026.34
+          ],
+          "join_time_ms": [
+            169849.186
+          ]
+        }
+      }
+    }
+  },
+  "OSM": {
+    "Point-in-Polygon": {
+      "100000": {
+        "100000": {
+          "num_results": [
+            44
+          ],
+          "build_index1_time_ms": [
+            141.673
+          ],
+          "build_index2_time_ms": [
+            152.319
+          ],
+          "join_time_ms": [
+            1116.361
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            75
+          ],
+          "build_index1_time_ms": [
+            153.132
+          ],
+          "build_index2_time_ms": [
+            1608.949
+          ],
+          "join_time_ms": [
+            7643.386
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            214
+          ],
+          "build_index1_time_ms": [
+            147.609
+          ],
+          "build_index2_time_ms": [
+            18655.992
+          ],
+          "join_time_ms": [
+            73419.48
+          ]
+        }
+      },
+      "1000000": {
+        "100000": {
+          "num_results": [
+            295
+          ],
+          "build_index1_time_ms": [
+            1532.54
+          ],
+          "build_index2_time_ms": [
+            2106.43
+          ],
+          "join_time_ms": [
+            1550.297
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            523
+          ],
+          "build_index1_time_ms": [
+            1607.75
+          ],
+          "build_index2_time_ms": [
+            2952.878
+          ],
+          "join_time_ms": [
+            7430.227
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            1455
+          ],
+          "build_index1_time_ms": [
+            1575.337
+          ],
+          "build_index2_time_ms": [
+            19160.633
+          ],
+          "join_time_ms": [
+            14549.736
+          ]
+        }
+      },
+      "10000000": {
+        "100000": {
+          "num_results": [
+            2178
+          ],
+          "build_index1_time_ms": [
+            15278.332
+          ],
+          "build_index2_time_ms": [
+            2334.064
+          ],
+          "join_time_ms": [
+            101787.347
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            4374
+          ],
+          "build_index1_time_ms": [
+            16167.772
+          ],
+          "build_index2_time_ms": [
+            1548.695
+          ],
+          "join_time_ms": [
+            8470.617
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            12211
+          ],
+          "build_index1_time_ms": [
+            15001.165
+          ],
+          "build_index2_time_ms": [
+            18490.31
+          ],
+          "join_time_ms": [
+            82999.515
+          ]
+        }
+      }
+    },
+    "Polygon-Polygon": {
+      "100000": {
+        "100000": {
+          "num_results": [
+            60452
+          ],
+          "build_index1_time_ms": [
+            154.619
+          ],
+          "build_index2_time_ms": [
+            147.661
+          ],
+          "join_time_ms": [
+            1415.393
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            292504
+          ],
+          "build_index1_time_ms": [
+            163.836
+          ],
+          "build_index2_time_ms": [
+            1604.081
+          ],
+          "join_time_ms": [
+            1267.91
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            3537477
+          ],
+          "build_index1_time_ms": [
+            163.392
+          ],
+          "build_index2_time_ms": [
+            16793.608
+          ],
+          "join_time_ms": [
+            3477.85
+          ]
+        }
+      },
+      "1000000": {
+        "100000": {
+          "num_results": [
+            443763
+          ],
+          "build_index1_time_ms": [
+            1631.074
+          ],
+          "build_index2_time_ms": [
+            1465.063
+          ],
+          "join_time_ms": [
+            2235.585
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            3217539
+          ],
+          "build_index1_time_ms": [
+            2406.487
+          ],
+          "build_index2_time_ms": [
+            2871.473
+          ],
+          "join_time_ms": [
+            9474.788
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            38841907
+          ],
+          "build_index1_time_ms": [
+            1555.273
+          ],
+          "build_index2_time_ms": [
+            18751.194
+          ],
+          "join_time_ms": [
+            37317.285
+          ]
+        }
+      },
+      "10000000": {
+        "100000": {
+          "num_results": [
+            2359225
+          ],
+          "build_index1_time_ms": [
+            18036.678
+          ],
+          "build_index2_time_ms": [
+            1817.725
+          ],
+          "join_time_ms": [
+            81435.343
+          ]
+        },
+        "1000000": {
+          "num_results": [
+            25230468
+          ],
+          "build_index1_time_ms": [
+            19351.271
+          ],
+          "build_index2_time_ms": [
+            2968.271
+          ],
+          "join_time_ms": [
+            105886.331
+          ]
+        },
+        "10000000": {
+          "num_results": [
+            292503431
+          ],
+          "build_index1_time_ms": [
+            19198.464
+          ],
+          "build_index2_time_ms": [
+            17062.763
+          ],
+          "join_time_ms": [
+            266682.594
+          ]
+        }
+      }
+    }
+  }
+}
