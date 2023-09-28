@@ -6,7 +6,7 @@ Official repository for the "Supercharge R-trees: Spatial Joins on Modern Hardwa
 
 This repository is organized as follows:
 
-+ cpp: C++ source and header files for single- and multithreaded implementations
++ cpp: C++ source and header files for single- and multithreaded implementations for R-tree synchronous traversal and PBSM
 
 + cpp_scripts: Python scripts to run C++ experiments and record performance in JSON format
 

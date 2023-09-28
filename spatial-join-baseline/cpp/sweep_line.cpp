@@ -1,4 +1,4 @@
-#include "Tree_generation_parallel.hpp"
+#include "Tree_generation.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -7,35 +7,32 @@ int main(int argc, char *argv[])
   FILE *trace_file;
   char *file_name_1;
   char *file_name_2;
-  char * parallel_approach; // "all" or "bfs_static" or "bfs_dfs_static" or "bfs_dynamic" or "bfs_dfs_dynamic"
-  int omp_threads;
 
   // simple argument parsing, not checking types, order matters
   // ./Tree-generation trace_file max_entries fill_factor
-  if (argc < 6)
+  if (argc < 4)
   {
-    printf("Not enough arguments! Usage: ./Tree-generation trace_1 trace_2 parallel_approach max_entries omp_threads fill_factor(optional)\n");
+    printf("Not enough arguments! Usage: ./Tree-generation trace_1 trace_2 max_entries fill_factor(optional)\n");
     return 1;
   }
-  
-  file_name_1 = argv[1];
-  file_name_2 = argv[2];
-  parallel_approach = argv[3];
-  max_entries = atoi(argv[4]);   
-  omp_threads = atoi(argv[5]);
-
-  if (argc > 6)
+  else if (argc == 4)
   {
-    fill_factor = atof(argv[7]);
+    file_name_1 = argv[1];
+    file_name_2 = argv[2];
+    max_entries = atoi(argv[3]);
   }
-  if (argc > 7)
+  else if (argc == 5)
   {
-    printf("Too many command line arguments! Usage: ./Tree-generation trace_1 trace_2 parallel_approach max_entries omp_threads fill_factor(optional)\n");
+    file_name_1 = argv[1];
+    file_name_2 = argv[2];
+    max_entries = atoi(argv[3]);
+    fill_factor = atof(argv[4]);
+  }
+  else
+  {
+    printf("Too many command line arguments! Usage: ./Tree-generation trace_1 trace_2 max_entries(optional) omp_threads(optional) fill_factor(optional)\n");
     return 1;
   }
-
-  omp_set_num_threads(omp_threads);
-
   timespec start, end;
 
   // Read file 1
@@ -77,7 +74,7 @@ int main(int argc, char *argv[])
     int id;
     float low0, high0, low1, high1;
     read = fscanf(trace_file, "%d %f %f %f %f\n", 
-                &id, &low0, &high0, &low1, &high1);
+				&id, &low0, &high0, &low1, &high1);
 
     if(low0 < lowest0) lowest0 = low0;
     if(high0 > highest0) highest0 = high0;
@@ -86,12 +83,18 @@ int main(int argc, char *argv[])
 
     mbr = new MBR(low0, high0, low1, high1); // currently only does square MBRs (what they did in VLDB'14 with non-updating indices)
     agents.push_back(mbr);
+    Event *eventBottom = new Event(low1, true, mbr, 0);
+    Event *eventTop = new Event(high1, false, mbr, 0);
+    sweep_data.push_back(eventBottom);
+    sweep_data.push_back(eventTop);
   }
   mbr = new MBR(lowest0, highest0, lowest1, highest1);
+  float l = lowest0;
+  float r = highest0;
 
   // STR bulk-loading 1
   clock_gettime(CLOCK_BOOTTIME, &start);
-  bulk_load_parallel(&agents, 0, mbr);
+  bulk_load(&agents, 0, mbr);
   clock_gettime(CLOCK_BOOTTIME, &end);
 
   timespec total_time = diff(start, end);
@@ -102,7 +105,7 @@ int main(int argc, char *argv[])
 
   // Fixing tree 1
 //   fix_tree(root_A);
-  index_serialization(root_A, "tree_A.bin", max_entries);
+  //index_serialization(root_A, "tree_A.bin");
 
   // Read file 2
   trace_file = fopen(file_name_2, "r");
@@ -141,15 +144,21 @@ int main(int argc, char *argv[])
     int id;
     float low0, high0, low1, high1;
     read = fscanf(trace_file, "%d %f %f %f %f\n", 
-                &id, &low0, &high0, &low1, &high1);
+				&id, &low0, &high0, &low1, &high1);
 
     if(low0 < lowest0) lowest0 = low0;
+    if(low0 < l) l = low0;
     if(high0 > highest0) highest0 = high0;
+    if(high0 > r) r = high0;
     if(low1 < lowest1) lowest1 = low1;
     if(high1 > highest1) highest1 = high1;
 
     mbr = new MBR(low0, high0, low1, high1); // currently only does square MBRs (what they did in VLDB'14 with non-updating indices)
     agents.push_back(mbr);
+    Event *eventBottom = new Event(low1, true, mbr, 1);
+    Event *eventTop = new Event(high1, false, mbr, 1);
+    sweep_data.push_back(eventBottom);
+    sweep_data.push_back(eventTop);
   }
   mbr = new MBR(lowest0, highest0, lowest1, highest1);
 
@@ -159,7 +168,7 @@ int main(int argc, char *argv[])
 
   // STR bulk-loading 2
   clock_gettime(CLOCK_BOOTTIME, &start);
-  bulk_load_parallel(&agents, 1, mbr);
+  bulk_load(&agents, 1, mbr);
   clock_gettime(CLOCK_BOOTTIME, &end);
 
   total_time = diff(start, end);
@@ -169,69 +178,32 @@ int main(int argc, char *argv[])
   printf("Building RTree for trace 2: %.2f ms\n", total_time_ms);
   // Fixing tree 2
 //   fix_tree(root_B);
-  index_serialization(root_B, "tree_B.bin", max_entries);
+  //index_serialization(root_B, "tree_B.bin");
 
-  ///// BFS + static /////
+  std::vector<std::pair<int, int>> new_results;
+  clock_gettime(CLOCK_BOOTTIME, &start);
+  sync_traversal(new_results, root_A, root_B);
+  clock_gettime(CLOCK_BOOTTIME, &end);
 
-  if(strcmp(parallel_approach, "all") == 0 || strcmp(parallel_approach, "bfs_static") == 0) {
-    omp_set_schedule(omp_sched_static, -1);  
-    std::vector<std::pair<int, int>> bfs_static_results;
-    clock_gettime(CLOCK_BOOTTIME, &start);
-    bfs_parallel(root_A, root_B, bfs_static_results);
-    clock_gettime(CLOCK_BOOTTIME, &end);
-    total_time = diff(start, end);
-    total_time_ms =
-        ((float)total_time.tv_sec) * 1000.0 +
-        ((float)total_time.tv_nsec) / 1000.0 / 1000.0;
-    printf("BFS + static duration: %.2f ms\n", total_time_ms);
-    printf("Number of results (BFS + static): %lu\n", bfs_static_results.size());
-  }
+  total_time = diff(start, end);
+  total_time_ms =
+      ((float)total_time.tv_sec) * 1000.0 +
+      ((float)total_time.tv_nsec) / 1000.0 / 1000.0;
+  printf("Sync traversal duration: %.2f ms\n", total_time_ms);
+  printf("Number of results: %lu\n", new_results.size());
 
+  // Perform sweep line join
+  std::vector<std::pair<MBR *, MBR *>> sweep_results;
+  clock_gettime(CLOCK_BOOTTIME, &start);
+  sweep_line_join(sweep_results, &sweep_data, l);
+  clock_gettime(CLOCK_BOOTTIME, &end);
 
-  ///// BFS-DFS + static /////
-  if(strcmp(parallel_approach, "all") == 0 || strcmp(parallel_approach, "bfs_dfs_static") == 0) {
-    omp_set_schedule(omp_sched_static, -1);  
-    std::vector<std::pair<int, int>> bfs_dfs_static_results;
-    clock_gettime(CLOCK_BOOTTIME, &start);
-    bfs_dfs_parallel(root_A, root_B, bfs_dfs_static_results, omp_threads);
-    clock_gettime(CLOCK_BOOTTIME, &end);
-    total_time = diff(start, end);
-    total_time_ms =
-        ((float)total_time.tv_sec) * 1000.0 +
-        ((float)total_time.tv_nsec) / 1000.0 / 1000.0;
-    printf("BFS-DFS + static duration: %.2f ms\n", total_time_ms);
-    printf("Number of results (BFS-DFS + static): %lu\n", bfs_dfs_static_results.size());
-  }
-
-  ///// BFS + dynamic /////
-  if(strcmp(parallel_approach, "all") == 0 || strcmp(parallel_approach, "bfs_dynamic") == 0) {
-    omp_set_schedule(omp_sched_dynamic, -1);  
-    std::vector<std::pair<int, int>> bfs_dynamic_results;
-    clock_gettime(CLOCK_BOOTTIME, &start);
-    bfs_parallel(root_A, root_B, bfs_dynamic_results);
-    clock_gettime(CLOCK_BOOTTIME, &end);
-    total_time = diff(start, end);
-    total_time_ms =
-        ((float)total_time.tv_sec) * 1000.0 +
-        ((float)total_time.tv_nsec) / 1000.0 / 1000.0;
-    printf("BFS + dynamic duration: %.2f ms\n", total_time_ms);
-    printf("Number of results (BFS + dynamic): %lu\n", bfs_dynamic_results.size());
-  }
-
-  ///// BFS-DFS + dynamic /////
-  if(strcmp(parallel_approach, "all") == 0 || strcmp(parallel_approach, "bfs_dfs_dynamic") == 0) {
-    omp_set_schedule(omp_sched_dynamic, -1);  
-    std::vector<std::pair<int, int>> bfs_dfs_dynamic_results;
-    clock_gettime(CLOCK_BOOTTIME, &start);
-    bfs_dfs_parallel(root_A, root_B, bfs_dfs_dynamic_results, omp_threads);
-    clock_gettime(CLOCK_BOOTTIME, &end);
-    total_time = diff(start, end);
-    total_time_ms =
-        ((float)total_time.tv_sec) * 1000.0 +
-        ((float)total_time.tv_nsec) / 1000.0 / 1000.0;
-    printf("BFS-DFS + dynamic duration: %.2f ms\n", total_time_ms);
-    printf("Number of results (BFS-DFS + dynamic): %lu\n", bfs_dfs_dynamic_results.size());
-  }
+  total_time = diff(start, end);
+  total_time_ms =
+      ((float)total_time.tv_sec) * 1000.0 +
+      ((float)total_time.tv_nsec) / 1000.0 / 1000.0;
+  printf("Sweep line join time: %.2f ms\n", total_time_ms);
+  printf("Number of results: %lu\n", sweep_results.size());
 
   return 0;
 }

@@ -1,23 +1,28 @@
 """
 Example usage:
-    python process_OSM.py --input_file_dir /mnt/scratch/wenqi/buildings --out_file_dir ../generated_data/ --obj_type polygon --num_obj 1000 --num_file 2 # 1K 
-    python process_OSM.py --input_file_dir /mnt/scratch/wenqi/buildings --out_file_dir ../generated_data/ --obj_type polygon --num_obj 1000000 --num_file 2 # 1M
-
-    python process_OSM.py --input_file_dir /mnt/scratch/wenqi/all_nodes --out_file_dir ../generated_data/ --obj_type point --num_obj 1000 --num_file 1 # 1K 
-    python process_OSM.py --input_file_dir /mnt/scratch/wenqi/all_nodes --out_file_dir ../generated_data/ --obj_type point --num_obj 1000000 --num_file 1 # 1M
+    python process_OSM_tmp_10M_70M.py --input_file_dir /mnt/scratch/wenqi/parks --out_file_dir ../generated_data_OSM_10M_70M/ --obj_type polygon --num_obj 9961896 --num_file 1 # total num = 9961896
+    python process_OSM_tmp_10M_70M.py --input_file_dir /mnt/scratch/wenqi/roards --out_file_dir ../generated_data_OSM_10M_70M/ --obj_type polygon --num_obj 72339945 --num_file 1 # total num = 72339945
 
 Processing the OpenStreetMap building dataset (115M) released by SpatialHadoop: http://spatialhadoop.cs.umn.edu/datasets.html
 This is a polyogn dataset, thus we need to convert it into rectangles. To download from google drive using commands:
     pip install gdown
     gdown https://drive.google.com/u/0/uc?id=0B1jY75xGiy7ecW0tTFJSczdkSzQ&export=download&resourcekey=0-Or_UPhT-2MBlZmE5X5pcsg
     bzip2 -d buildings.bz2
+
+Use the geomet library to parse the WKT format:
+
+https://github.com/geomet/geomet/blob/master/geomet/tests/wkt_test.py
+https://stackoverflow.com/questions/16731461/parsing-a-wkt-file
 """
 
 import os
 import numpy as np
 import argparse 
+import json
+import time
 
 from typing import Optional
+from geomet import wkt
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_file_dir', type=str, default='/mnt/scratch/wenqi/buildings')
@@ -35,6 +40,41 @@ obj_type = args.obj_type
 num_obj = args.num_obj
 num_file = args.num_file
 
+def parse_list_recursive(l : list):
+    """
+    l can be a list of list, or a list of coordinates:
+
+    Example (list of list):
+        [[23.5127538, 54.7208103]]
+        [[23.5132332, 54.7207364]]
+
+    Example (list of coordinates):
+        [139.6157855, 37.1068373]
+
+    """
+
+    x = []
+    y = []
+    if isinstance(l[0], list):
+        for i, c in enumerate(l):
+            # if not isinstance(c, list):
+            #     print("c:", c)
+            #     print("l:", l)
+
+            # if isinstance(c[0], list):
+            #     assert len(c[0]) == len(c[1])
+            #     x.extend(c[0])
+            #     y.extend(c[1])
+            # else:
+            x.append(c[0])
+            y.append(c[1])
+            if i >= 5: # truncate the list for very complicated polygons
+                break
+    else:
+        x.append(l[0])
+        y.append(l[1])
+    return x, y
+
 def parse_line_polygon(line : str):
     """
     Input a line of OSM, output the obj_id, low0, high0, low1, high1 (0 and 1 are dim)
@@ -48,77 +88,40 @@ def parse_line_polygon(line : str):
     """
 
     valid = True
-    if "GEOMETRYCOLLECTION" in line or "POLYGON" not in line:
-        # multiple polygons, negelect
-        valid = False
-        return valid, 0, 0, 0, 0, 0
+    # if "GEOMETRYCOLLECTION" in line or "POLYGON" not in line:
+    #     # multiple polygons, negelect
+    #     valid = False
+    #     return valid, 0, 0, 0, 0, 0
 
+    # remove the first ID and the first \t
     elements = line.split('\t')
-    obj_id = elements[0]
-    polygon = elements[1]
-    coordinates = polygon.replace("POLYGON ((","").replace("))","").split(",")
-    dim0 = []
-    dim1 = []
-"""
-GEOMETRYCOLLECTION is a collection of geometries. It can contain points, lines, and polygons.
-All types = ['Point',
-            'LineString',
-            'Polygon',
-            'MultiPoint',
-            'MultiLineString',
-            'MultiPolygon']
-WKT['point'] = {
-    '2d': 'POINT (0.0000000000000000 1.0000000000000000)',
-}
-WKT['linestring'] = {
-    '2d': ('LINESTRING (-100.0000000000000000 0.0000000000000000, '
-           '-101.0000000000000000 -1.0000000000000000)'),
-}
-WKT['polygon'] = {
-    '2d': ('POLYGON ((100.0010 0.0010, 101.1235 0.0010, 101.0010 1.0010, '
-           '100.0010 0.0010), '
-           '(100.2010 0.2010, 100.8010 0.2010, 100.8010 0.8010, '
-           '100.2010 0.2010))'),
-}
-WKT['multipoint'] = {
-    '2d': 'MULTIPOINT ((100.000 3.101), (101.000 2.100), (3.140 2.180))',
+    obj_id = int(elements[0])
+    line_except_ids = ''.join(elements[1:])
+    t_start = time.time()
+    line_dict = wkt.loads(line_except_ids)
+    t_end = time.time()
+    if (t_end - t_start)*1000.0 > 10:
+        print("wkt.loads time: {:.2f} ms".format((t_end - t_start)*1000.0))
+        print(line_dict['type'])
 
-}
-WKT['multilinestring'] = (
-    'MULTILINESTRING ((0 -1, -2 -3, -4 -5), '
-    '(1.66 -31023.5 1.1, 10000.9999 3.0 2.2, 100.9 1.1 3.3, 0 0 4.4))'
-)
-WKT['multipolygon'] = (
-    'MULTIPOLYGON (((100.001 0.001, 101.001 0.001, 101.001 1.001, '
-    '100.001 0.001), '
-    '(100.201 0.201, 100.801 0.201, 100.801 0.801, '
-    '100.201 0.201)), ((1 2 3 4, 5 6 7 8, 9 10 11 12, 1 2 3 4)))'
-)
+    list_0 = []
+    list_1 = []
+    # print(line_dict)
+    if line_dict['type'] == 'GeometryCollection':
+        for geom in line_dict['geometries']:
+            for c in geom['coordinates']:
+                list_0, list_1 = parse_list_recursive(c)
+    else:
+        for c in line_dict['coordinates']:
+            list_0.append(c[0])
+            list_1.append(c[1])
 
-"""
-
-
-    if len(coordinates) < 5:
-        return valid, 0, 0, 0, 0, 0
-    
-    for c in coordinates:
-        c_pair_uncleaned = c.split(' ') # sometimes there are unexpected spaces, e.g., ['', '13.740196', '51.0532229']
-        c_pair = []
-        for c in c_pair_uncleaned:
-            if c != '':
-                c_pair.append(c)
-        # print(c_pair)
-        try: # float convert successful
-            dim0.append(float(c_pair[0]))
-            dim1.append(float(c_pair[1]))
-        except:
-            valid = False
-            return valid, 0, 0, 0, 0, 0
-
-    low0 = np.amin(dim0)
-    high0 = np.amax(dim0)
-    low1 = np.amin(dim1)
-    high1 = np.amax(dim1)
+    # print(list_0)
+    # print(list_1)
+    low0 = np.amin(list_0)
+    high0 = np.amax(list_0)
+    low1 = np.amin(list_1)
+    high1 = np.amax(list_1)
 
     return valid, obj_id, low0, high0, low1, high1 
 
@@ -153,9 +156,6 @@ def convert(input_file_dir : str, out_file_dir : str, obj_type: str, num_obj : i
         for fid in range(num_file):
 
             write_C = False 
-            write_spatialspark = False 
-            write_postgis = False 
-            write_cuspatial = False
 
             if obj_type == 'polygon':
                 file_suffix = f"OSM_{num_obj}_polygon_file_{fid}"
@@ -163,48 +163,24 @@ def convert(input_file_dir : str, out_file_dir : str, obj_type: str, num_obj : i
                 file_suffix = f"OSM_{num_obj}_point_file_{fid}"
             
             out_dir_C = os.path.join(out_file_dir, "C_" + file_suffix + ".txt")
-            out_dir_spatialspark = os.path.join(out_file_dir, "spatialspark_" + file_suffix + ".txt")
-            out_dir_postgis = os.path.join(out_file_dir, "postgis_" + file_suffix + ".csv")
-            out_dir_cuspatial = os.path.join(out_file_dir, "cuspatial_" + file_suffix + ".csv")
 
             # TODO: fill in other file formats
             if os.path.exists(out_dir_C): 
                 print("Output file directory already exist: {}\nThis script will not write the file...".format(out_dir_C))
             else:
                 write_C = True
-            if os.path.exists(out_dir_spatialspark): 
-                print("Output file directory already exist: {}\nThis script will not write the file...".format(out_dir_spatialspark))
-            else:
-                write_spatialspark = True
-            if os.path.exists(out_dir_postgis): 
-                print("Output file directory already exist: {}\nThis script will not write the file...".format(out_dir_postgis))
-            else:
-                write_postgis = True
-            if os.path.exists(out_dir_cuspatial): 
-                print("Output file directory already exist: {}\nThis script will not write the file...".format(out_dir_cuspatial))
-            else:
-                write_cuspatial = True
 
             # TODO: fill in other file formats
-            if not(write_C or write_spatialspark or write_postgis or write_cuspatial):
+            if not(write_C):
                 print(f"All files {fid} exist, continue to next file ID...")
                 continue
             else:
                 print(f"Generating file round {fid}")
                 
-            with open(out_dir_C, 'a') as f_C,\
-                open(out_dir_spatialspark, 'a') as f_spatialspark,\
-                open(out_dir_postgis, 'a') as f_postgis,\
-                open(out_dir_cuspatial, 'a') as f_cuspatial:
+            with open(out_dir_C, 'a') as f_C:
 
                 if write_C:
                     f_C.write(f"{num_obj}\n")
-                if write_spatialspark:
-                    pass
-                if write_postgis:	
-                    f_postgis.write(f"gid,geom\n")
-                if write_cuspatial:
-                    f_cuspatial.write(f"gid,geometry\n")
 
                 total_count = 0
                 valid_count = 0
@@ -213,6 +189,10 @@ def convert(input_file_dir : str, out_file_dir : str, obj_type: str, num_obj : i
                     total_count += 1
                     
                     if obj_type == 'polygon':
+
+                        if valid_count % 1000 == 0:
+                            print(f"out count: {valid_count} = {valid_count/1000} K")
+
                         valid, obj_id, low0, high0, low1, high1 = parse_line_polygon(line)
                         
                         if valid:
@@ -222,15 +202,6 @@ def convert(input_file_dir : str, out_file_dir : str, obj_type: str, num_obj : i
                             if write_C:
                                 f_C.write("{obj_id} {x_low} {x_high} {y_low} {y_high}\n".format(
                                     obj_id=obj_id, x_low=low0, y_low=low1, x_high=high0, y_high=high1))
-                            if write_spatialspark:
-                                f_spatialspark.write("POLYGON(({x_low} {y_low}, {x_low} {y_high}, {x_high} {y_high}, {x_high} {y_low}, {x_low} {y_low}))\n".format(
-                                    obj_id=obj_id, x_low=low0, y_low=low1, x_high=high0, y_high=high1))
-                            if write_postgis:	
-                                f_postgis.write("{obj_id};POLYGON(({x_low} {y_low}, {x_low} {y_high}, {x_high} {y_high}, {x_high} {y_low}, {x_low} {y_low}))\n".format(
-                                    obj_id=obj_id, x_low=low0, y_low=low1, x_high=high0, y_high=high1))
-                            if write_cuspatial: 
-                                f_cuspatial.write('{obj_id},"POLYGON(({x_low} {y_low}, {x_low} {y_high}, {x_high} {y_high}, {x_high} {y_low}, {x_low} {y_low}))"\n'.format(
-                                    obj_id=obj_id, x_low=low0, y_low=low1, x_high=high0, y_high=high1))
 
                     elif obj_type == 'point':
                         valid, obj_id, x, y = parse_line_point(line)
@@ -239,15 +210,6 @@ def convert(input_file_dir : str, out_file_dir : str, obj_type: str, num_obj : i
                             # TODO: fill in other file formats
                             if write_C:
                                 f_C.write("{obj_id} {x} {x} {y} {y}\n".format(
-                                    obj_id=obj_id, x=x, y=y))
-                            if write_spatialspark:
-                                f_spatialspark.write("POINT({x} {y})\n".format(
-                                    obj_id=obj_id, x=x, y=y))
-                            if write_postgis:	
-                                f_postgis.write("{obj_id};POINT({x} {y})\n".format(
-                                    obj_id=obj_id, x=x, y=y))
-                            if write_cuspatial: 
-                                f_cuspatial.write('{obj_id},"POINT({x} {y})"\n'.format(
                                     obj_id=obj_id, x=x, y=y))
                          
                     if valid_count == num_obj:

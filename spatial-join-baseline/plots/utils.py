@@ -181,6 +181,32 @@ def get_cpp_mean_and_error_bar_dict(json_dict):
                             dict_mean_error_bar[dataset][join_type][size_dataset_A][size_dataset_B][max_entry_size]["mean_bfs_dfs_dynamic_ms"] = np.average(json_dict[dataset][join_type][size_dataset_A][size_dataset_B][max_entry_size]["bfs_dfs_dynamic_ms"])
     return dict_mean_error_bar
  
+
+def get_cpp_stripe_mean_and_error_bar_dict(json_dict):
+    """
+    get mean and std deviation from the cpp profiles
+    """
+    dict_mean_error_bar = cp_FPGA_dict_format(json_dict)
+    for dataset in json_dict:
+        for join_type in json_dict[dataset]:
+            for size_dataset_A in json_dict[dataset][join_type]:
+                for size_dataset_B in json_dict[dataset][join_type][size_dataset_A]:
+                    for num_partitions in json_dict[dataset][join_type][size_dataset_A][size_dataset_B]:
+
+                        best_join_direction = json_dict[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions]["best_join_direction"]
+                        if best_join_direction == 'p0s1':
+                            key_partition = 'p0s1_partition_ms'
+                        elif best_join_direction == 'p1s0':
+                            key_partition = 'p1s0_partition_ms'
+                        dict_mean_error_bar[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions]["std_partition_ms"] = np.std(json_dict[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions][key_partition])
+                        dict_mean_error_bar[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions]["std_join_ms"] = np.std(json_dict[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions]["best_join_ms"])
+
+                        dict_mean_error_bar[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions]["mean_partition_ms"] = np.average(json_dict[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions][key_partition])
+                        dict_mean_error_bar[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions]["mean_join_ms"] = np.average(json_dict[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions]["best_join_ms"])
+                
+    return dict_mean_error_bar
+ 
+
 def get_spatialspark_mean_and_error_bar_dict(json_dict):
     """
     Given the key, return a dictionary of std deviation

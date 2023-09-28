@@ -1,4 +1,7 @@
 multithread
 multithread_energy
+1d_stripes
+1d_multithread
 singlethread
 FPGA_index_constructor
+tile_join_microbench

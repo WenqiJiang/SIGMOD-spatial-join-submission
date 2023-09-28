@@ -1,10 +1,7 @@
 """
 Example usage:
-    python process_OSM.py --input_file_dir /mnt/scratch/wenqi/buildings --out_file_dir ../generated_data/ --obj_type polygon --num_obj 1000 --num_file 2 # 1K 
-    python process_OSM.py --input_file_dir /mnt/scratch/wenqi/buildings --out_file_dir ../generated_data/ --obj_type polygon --num_obj 1000000 --num_file 2 # 1M
-
-    python process_OSM.py --input_file_dir /mnt/scratch/wenqi/all_nodes --out_file_dir ../generated_data/ --obj_type point --num_obj 1000 --num_file 1 # 1K 
-    python process_OSM.py --input_file_dir /mnt/scratch/wenqi/all_nodes --out_file_dir ../generated_data/ --obj_type point --num_obj 1000000 --num_file 1 # 1M
+    python process_OSM_hot_fix.py --input_file_dir /mnt/scratch/wenqi/parks --out_file_dir ../generated_data_OSM_park_10M/ --obj_type polygon --num_obj 9900000 --num_file 1 # total num = 9961896
+    python process_OSM_hot_fix.py --input_file_dir /mnt/scratch/wenqi/roads --out_file_dir ../generated_data_OSM_road_70M/ --obj_type polygon --num_obj 72339945 --num_file 1 # total num = 72339945
 
 Processing the OpenStreetMap building dataset (115M) released by SpatialHadoop: http://spatialhadoop.cs.umn.edu/datasets.html
 This is a polyogn dataset, thus we need to convert it into rectangles. To download from google drive using commands:
@@ -48,59 +45,46 @@ def parse_line_polygon(line : str):
     """
 
     valid = True
-    if "GEOMETRYCOLLECTION" in line or "POLYGON" not in line:
-        # multiple polygons, negelect
-        valid = False
-        return valid, 0, 0, 0, 0, 0
+    # if "GEOMETRYCOLLECTION" in line or "POLYGON" not in line or "MULTIPOLYGON" in line:
+    #     # multiple polygons, negelect
+    #     valid = False
+    #     return valid, 0, 0, 0, 0, 0
 
     elements = line.split('\t')
     obj_id = elements[0]
     polygon = elements[1]
-    coordinates = polygon.replace("POLYGON ((","").replace("))","").split(",")
     dim0 = []
     dim1 = []
-"""
-GEOMETRYCOLLECTION is a collection of geometries. It can contain points, lines, and polygons.
-All types = ['Point',
-            'LineString',
-            'Polygon',
-            'MultiPoint',
-            'MultiLineString',
-            'MultiPolygon']
-WKT['point'] = {
-    '2d': 'POINT (0.0000000000000000 1.0000000000000000)',
-}
-WKT['linestring'] = {
-    '2d': ('LINESTRING (-100.0000000000000000 0.0000000000000000, '
-           '-101.0000000000000000 -1.0000000000000000)'),
-}
-WKT['polygon'] = {
-    '2d': ('POLYGON ((100.0010 0.0010, 101.1235 0.0010, 101.0010 1.0010, '
-           '100.0010 0.0010), '
-           '(100.2010 0.2010, 100.8010 0.2010, 100.8010 0.8010, '
-           '100.2010 0.2010))'),
-}
-WKT['multipoint'] = {
-    '2d': 'MULTIPOINT ((100.000 3.101), (101.000 2.100), (3.140 2.180))',
-
-}
-WKT['multilinestring'] = (
-    'MULTILINESTRING ((0 -1, -2 -3, -4 -5), '
-    '(1.66 -31023.5 1.1, 10000.9999 3.0 2.2, 100.9 1.1 3.3, 0 0 4.4))'
-)
-WKT['multipolygon'] = (
-    'MULTIPOLYGON (((100.001 0.001, 101.001 0.001, 101.001 1.001, '
-    '100.001 0.001), '
-    '(100.201 0.201, 100.801 0.201, 100.801 0.801, '
-    '100.201 0.201)), ((1 2 3 4, 5 6 7 8, 9 10 11 12, 1 2 3 4)))'
-)
-
-"""
-
-
-    if len(coordinates) < 5:
-        return valid, 0, 0, 0, 0, 0
+    while polygon.startswith(" ") or polygon.startswith("\t"):
+        polygon = polygon[1:]
     
+    # normal_start = \
+    #     polygon.startswith("POLYGON") or \
+    #     polygon.startswith("MULTIPOLYGON") or \
+    #     polygon.startswith("LINESTRING") or \
+    #     polygon.startswith("MULTILINESTRING") or \
+    #     polygon.startswith("POINT") or \
+    #     polygon.startswith("MULTIPOINT") or \
+    #     polygon.startswith("GEOMETRYCOLLECTION")
+
+    # if not normal_start:
+    #     print("unusually polygin start string:\n", polygon)
+    #     valid = False
+    #     return  False, 0, 0, 0, 0, 0
+
+    coordinates = polygon.replace("POLYGON ", "").replace("MULTIPOLYGON ", "").replace("LINESTRING ", "").replace(
+        "MULTILINESTRING ", "").replace("POINT ", "").replace("MULTIPOINT ", "").replace(
+            "GEOMETRYCOLLECTION ", "").replace("(", "").replace(")", "").split(",")
+    # coordinates = polygon.replace("POLYGON ((","").replace("))","").split(",")
+
+    # if len(coordinates) < 5:
+    #     return valid, 0, 0, 0, 0, 0
+    
+    """
+    Still cannot handle EMPTY right now
+['35.1492237 31.713551', ' 35.1492233 31.713551', ' 35.1492233 31.7135514', ' 35.1492229 31.7135697', ' 35.1492172 31.7135699', ' 35.1492213 31.713551', ' 35.1492291 31.713515', ' 35.1492328 31.7134978', ' 35.1492329 31.7134975', ' 35.1492329 31.7134979', ' 35.1492328 31.7135147', ' 35.1492329 31.713515', ' 35.1492329 31.7135151', ' 35.1492333 31.7135151', ' 35.1492996 31.7135146', ' 35.1493369 31.7135243', ' 35.1493384 31.7135245', ' 35.14934 31.7135246', ' 35.149359 31.7135247', ' 35.1493592 31.7135247', ' 35.1493595 31.7135247', ' 35.1493624 31.7135247', ' 35.1494224 31.7135247', ' 35.1494226 31.7135247', ' 35.1494538 31.713524', ' 35.1494542 31.7135241', ' 35.1494541 31.7135244', ' 35.1494474 31.7135508', ' 35.1494473 31.7135511', ' 35.1492868 31.713551', ' 35.1492237 31.713551', ' EMPTY']
+
+    """
     for c in coordinates:
         c_pair_uncleaned = c.split(' ') # sometimes there are unexpected spaces, e.g., ['', '13.740196', '51.0532229']
         c_pair = []
@@ -113,14 +97,55 @@ WKT['multipolygon'] = (
             dim1.append(float(c_pair[1]))
         except:
             valid = False
+            print(coordinates)
             return valid, 0, 0, 0, 0, 0
-
+                
     low0 = np.amin(dim0)
     high0 = np.amax(dim0)
     low1 = np.amin(dim1)
     high1 = np.amax(dim1)
 
     return valid, obj_id, low0, high0, low1, high1 
+
+    """
+    GEOMETRYCOLLECTION is a collection of geometries. It can contain points, lines, and polygons.
+    All types = ['Point',
+                'LineString',
+                'Polygon',
+                'MultiPoint',
+                'MultiLineString',
+                'MultiPolygon']
+    WKT['point'] = {
+        '2d': 'POINT (0.0000000000000000 1.0000000000000000)',
+    }
+    WKT['linestring'] = {
+        '2d': ('LINESTRING (-100.0000000000000000 0.0000000000000000, '
+            '-101.0000000000000000 -1.0000000000000000)'),
+    }
+    WKT['polygon'] = {
+        '2d': ('POLYGON ((100.0010 0.0010, 101.1235 0.0010, 101.0010 1.0010, '
+            '100.0010 0.0010), '
+            '(100.2010 0.2010, 100.8010 0.2010, 100.8010 0.8010, '
+            '100.2010 0.2010))'),
+    }
+    WKT['multipoint'] = {
+        '2d': 'MULTIPOINT ((100.000 3.101), (101.000 2.100), (3.140 2.180))',
+
+    }
+    WKT['multilinestring'] = (
+        'MULTILINESTRING ((0 -1, -2 -3, -4 -5), '
+        '(1.66 -31023.5 1.1, 10000.9999 3.0 2.2, 100.9 1.1 3.3, 0 0 4.4))'
+    )
+    WKT['multipolygon'] = (
+        'MULTIPOLYGON (((100.001 0.001, 101.001 0.001, 101.001 1.001, '
+        '100.001 0.001), '
+        '(100.201 0.201, 100.801 0.201, 100.801 0.801, '
+        '100.201 0.201)), ((1 2 3 4, 5 6 7 8, 9 10 11 12, 1 2 3 4)))'
+    )
+
+POLYGON EMPTY can exist
+    """
+
 
 def parse_line_point(line : str):
     """
@@ -184,6 +209,10 @@ def convert(input_file_dir : str, out_file_dir : str, obj_type: str, num_obj : i
                 print("Output file directory already exist: {}\nThis script will not write the file...".format(out_dir_cuspatial))
             else:
                 write_cuspatial = True
+
+            write_spatialspark = False 
+            write_postgis = False 
+            write_cuspatial = False
 
             # TODO: fill in other file formats
             if not(write_C or write_spatialspark or write_postgis or write_cuspatial):

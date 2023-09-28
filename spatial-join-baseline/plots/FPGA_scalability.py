@@ -82,19 +82,19 @@ def plot_and_save_speedup(dataset, join_type, time='e2e'):
     plot_linear = ax.plot(PE_nums, y_linear_speedup, linestyle='dashed', color='grey')
     ax.text(5, 5 + 1.2, "Linear speedup", rotation=45, fontsize=label_font)
     
-    if dataset == 'Uniform' and time == 'kernel':
-        ax.annotate("Mem. bound (read)", xy=(PE_nums[-1], y_speedup_8[-1]), xytext=(PE_nums[-2], y_speedup_8[-1] + 2), arrowprops={"arrowstyle": '-|>', 'color': '#1f1f1f', 'linewidth': 2}, fontsize=legend_font)
-    if dataset == 'OSM' and time == 'kernel':
-        ax.annotate("Mem. bound (write)", xy=(PE_nums[-1], y_speedup_32[-1]), xytext=(PE_nums[-2], y_speedup_32[-1] + 2), arrowprops={"arrowstyle": '-|>', 'color': '#1f1f1f', 'linewidth': 2}, fontsize=legend_font)
+    if dataset == 'Uniform':
+        ax.annotate("Mem. bound (read)", xy=(PE_nums[3], y_speedup_8[3]), xytext=(PE_nums[-2], y_speedup_8[-1] + 2), arrowprops={"arrowstyle": '-|>', 'color': '#1f1f1f', 'linewidth': 2}, fontsize=legend_font)
+    if dataset == 'OSM':
+        ax.annotate("Mem. bound (write)", xy=(PE_nums[3], y_speedup_32[3]), xytext=(7, y_speedup_32[-1] + 2), arrowprops={"arrowstyle": '-|>', 'color': '#1f1f1f', 'linewidth': 2}, fontsize=legend_font)
     
     ax.legend([plot_8[0], plot_16[0], plot_32[0]], ["Node size = 8", "Node size = 16", "Node size = 32"], loc='upper left', frameon=False, fontsize=legend_font)
     # ax.tick_params(top=False, bottom=True, left=True, right=False, labelleft=True, labelsize=tick_font)
     # ax.get_xaxis().set_visible(True)
     ax.set_xlabel('Number of join units', fontsize=label_font)
     if time == 'e2e':
-        ax.set_ylabel('Speedup (end-to-end)', fontsize=label_font)
+        ax.set_ylabel('Speedup (end-to-end time)', fontsize=label_font)
     elif time == 'kernel':
-        ax.set_ylabel('Speedup (FPGA kernel only)', fontsize=label_font)
+        ax.set_ylabel('Speedup (kernel time)', fontsize=label_font)
 
     ax.set_title(f'{dataset}, {join_type}, 10M x 10M', fontsize=label_font)
 
@@ -137,7 +137,7 @@ def plot_and_save_raw_performance(dataset, join_type, time='e2e'):
     print(y_mean_32)
     # print(y_mean_64)
 
-    fig, ax = plt.subplots(1, 1, figsize=(4,2.5))
+    fig, ax = plt.subplots(1, 1, figsize=(4,2.8))
 
     label_font = 12
     markersize = 10

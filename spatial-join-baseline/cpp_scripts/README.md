@@ -1,6 +1,7 @@
 # CPP test
 
-## Run all multi-thread experiments
+## R-Tree Sync Traversal
+### Run all multi-thread experiments
 
 Either run the following one script (for around an hour):
 
@@ -86,7 +87,7 @@ python cpp_run_all_multithread_experiments.py \
 --log_name log_parallel_approach
 ```
 
-## Run all single-thread experiments
+### Run all single-thread experiments
 
 Either run the following one script (for a longer time):
 
@@ -101,7 +102,7 @@ python cpp_run_all_singlethread_experiments.py \
 --log_name log_st
 ```
 
-## Thread scalability tests
+### Thread scalability tests
 
 ```
 python cpp_run_all_multithread_experiments.py \
@@ -156,7 +157,7 @@ python cpp_run_all_multithread_experiments.py \
 
 ```
 
-## Energy consumption experiments
+### Energy consumption experiments
 
 The measure duration is around 2 minutes. 
 
@@ -228,4 +229,29 @@ cpu51: cpufreq governor: schedutil
 cpufreq boost: 1
 cpu0: MSR_RAPL_PWR_UNIT: 0x000a1003 (0.125000 Watts, 0.000015 Joules, 0.000977 sec.)
 cpu16: MSR_RAPL_PWR_UNIT: 0x000a1003 (0.125000 Watts, 0.000015 Joules, 0.000977 sec.)
+```
+
+## 1-D Stripes (PBSM)
+
+### Run all multi-thread experiments
+
+```
+python cpp_run_all_stripe_multithread_experiments.py \
+--out_json_fname CPU_perf_16_threads_stripes.json \
+--overwrite 0 \
+--cpp_exe_dir /mnt/scratch/wenqi/spatial-join-baseline/cpp/1d_multithread \
+--C_file_dir /mnt/scratch/wenqi/spatial-join-baseline/generated_data \
+--num_threads 16 \
+--num_runs 3
+```
+
+### Run all single-thread experiments
+
+```
+python cpp_run_all_stripe_singlethread_experiments.py \
+--out_json_fname CPU_perf_singlethread_stripes.json \
+--overwrite 0 \
+--cpp_exe_dir /mnt/scratch/wenqi/spatial-join-baseline/cpp/1d_stripes \
+--C_file_dir /mnt/scratch/wenqi/spatial-join-baseline/generated_data \
+--num_runs 3
 ```

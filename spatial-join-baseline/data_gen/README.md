@@ -80,3 +80,28 @@ python process_OSM.py --input_file_dir /mnt/scratch/wenqi/all_nodes --out_file_d
 python process_OSM.py --input_file_dir /mnt/scratch/wenqi/all_nodes --out_file_dir ../generated_data/ --obj_type point --num_obj 1000000 --num_file 1 # 1M 
 python process_OSM.py --input_file_dir /mnt/scratch/wenqi/all_nodes --out_file_dir ../generated_data/ --obj_type point --num_obj 10000000 --num_file 1 # 10M 
 ```
+
+## Tile-level Join Microbenchmark Dataset
+
+Less populated (no results at all for tile size <= 64): 
+
+```
+python tile_microbench_data_gen.py --distribution uniform --obj_type polygon --num_obj 1000 --map_edge_len 10000.0 --obj_edge_len 1.0 --out_file_dir ../generated_data --seed 123 --file_id 0
+python tile_microbench_data_gen.py --distribution uniform --obj_type polygon --num_obj 1000 --map_edge_len 10000.0 --obj_edge_len 1.0 --out_file_dir ../generated_data --seed 456 --file_id 1
+```
+
+
+Moderately populated (145 results for tile join of size 64): 
+
+```
+python tile_microbench_data_gen.py --distribution uniform --obj_type polygon --num_obj 1000 --map_edge_len 10.0 --obj_edge_len 1.0 --out_file_dir ../generated_data --seed 123 --file_id 0
+python tile_microbench_data_gen.py --distribution uniform --obj_type polygon --num_obj 1000 --map_edge_len 10.0 --obj_edge_len 1.0 --out_file_dir ../generated_data --seed 456 --file_id 1
+```
+
+
+Highly populated (550 results for tile join of size 64): 
+
+```
+python tile_microbench_data_gen.py --distribution uniform --obj_type polygon --num_obj 1000 --map_edge_len 5.0 --obj_edge_len 1.0 --out_file_dir ../generated_data --seed 123 --file_id 0
+python tile_microbench_data_gen.py --distribution uniform --obj_type polygon --num_obj 1000 --map_edge_len 5.0 --obj_edge_len 1.0 --out_file_dir ../generated_data --seed 456 --file_id 1
+```

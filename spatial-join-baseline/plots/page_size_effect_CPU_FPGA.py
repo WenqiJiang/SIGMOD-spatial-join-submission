@@ -84,7 +84,7 @@ def subplot(dataset, join_type, ax):
     if legend_plot_set is None:
         legend_plot_set = [plot_cpu[0], plot_fpga[0], plot_fpga_kernel[0]]
         ax.legend([plot_cpu[0], plot_fpga[0], plot_fpga_kernel[0]], 
-              ["C++ multi-thread", "FPGA (end-to-end)", "FPGA (kernel only)"], loc="center left", ncol=1, \
+              ["C++ multi-thread", "SwiftSpatial (end-to-end)", "SwiftSpatial (kernel only)"], loc=(0.05, 0.25), ncol=1, \
                 facecolor='white', framealpha=1, frameon=False, fontsize=legend_font)
 
 
@@ -99,7 +99,7 @@ def plot_and_save():
 
     datasets = ["Uniform", "OSM"]
     join_types = ["Point-in-Polygon", "Polygon-Polygon"]
-    fig, ax_array = plt.subplots(1, 4, figsize=(16, 3))
+    fig, ax_array = plt.subplots(1, 4, figsize=(16, 3.2))
     fig.tight_layout(pad=3.0)
     
     cnt = 0

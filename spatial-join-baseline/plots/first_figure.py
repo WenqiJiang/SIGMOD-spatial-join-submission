@@ -8,7 +8,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import argparse
-from utils import load_json, load_sedona_json, get_cpp_mean_and_error_bar_dict, \
+from utils import load_json, load_sedona_json, get_cpp_mean_and_error_bar_dict, get_cpp_stripe_mean_and_error_bar_dict, \
     get_FPGA_mean_and_error_bar_dict, get_spatialspark_mean_and_error_bar_dict, get_software_baseline_error_bar_dict, \
     get_array_from_dict, compare_cpp_FPGA_num_results
 # plt.style.use('seaborn-colorblind') 
@@ -26,7 +26,7 @@ def get_default_colors():
 
   return default_colors
 
-datasets = ["OSM", "Uniform"]
+datasets = ["Uniform", "OSM"]
 join_types = ["Polygon-Polygon", "Point-in-Polygon"]
 size_scales = [int(1e5), int(1e6), int(1e7)] # measure 100K~1M
 
@@ -38,6 +38,12 @@ cpp_mt_mean_and_error_bar_dict = get_cpp_mean_and_error_bar_dict(cpp_mt_json_dic
 
 cpp_st_json_dict = load_json(f'./json_cpp/CPU_perf_singlethread_sync_traversal.json')
 cpp_st_mean_and_error_bar_dict = get_cpp_mean_and_error_bar_dict(cpp_st_json_dict)
+
+cpp_stripe_mt_json_dict = load_json(f'./json_cpp_stripe/CPU_perf_16_threads_stripes.json')
+cpp_stripe_mt_mean_and_error_bar_dict = get_cpp_stripe_mean_and_error_bar_dict(cpp_stripe_mt_json_dict)
+
+cpp_stripe_st_json_dict = load_json(f'./json_cpp_stripe/CPU_perf_singlethread_stripes.json')
+cpp_stripe_st_mean_and_error_bar_dict = get_cpp_stripe_mean_and_error_bar_dict(cpp_stripe_st_json_dict)
 
 postgis_json_dict = load_json(f'./json_postgis/postgis_runs.json')
 postgis_mean_and_error_bar_dict = get_software_baseline_error_bar_dict(postgis_json_dict)
@@ -80,12 +86,30 @@ def get_key_sets_without_max_entry(dataset, join_type, perf_metric="mean"):
     ]
     return key_sets
 
+def stripe_get_key_sets(json_dict, dataset, join_type, eval_perf_metric="best_join_ms", output_perf_metric="mean_join_ms"):
+    """
+    Given various num_partitions, return the performance array (mean and std) for each dataset of the highest performance
+    """
+    key_sets = []
+    for size_dataset_A, size_dataset_B in [("10000000", "10000000")]:
+        min_join_ms = np.inf
+        target_num_partitions = None
+        for num_partitions in json_dict[dataset][join_type][size_dataset_A][size_dataset_B]:
+            mean_join_ms = np.mean(json_dict[dataset][join_type][size_dataset_A][size_dataset_B][num_partitions][eval_perf_metric])
+            if mean_join_ms < min_join_ms:
+                min_join_ms = mean_join_ms
+                target_num_partitions = num_partitions
+        key_sets.append([dataset, join_type, size_dataset_A, size_dataset_B, target_num_partitions, output_perf_metric])
+    print(key_sets)
+    return key_sets
 
 def plot_and_save():
 
     fpga_y_mean = []
     cpp_mt_y_mean = []
     cpp_st_y_mean = []
+    cpp_stripe_mt_y_mean = []
+    cpp_stripe_st_y_mean = []
     postgis_y_mean = []
     sedona_y_mean = []
     spatialspark_y_mean = []
@@ -96,7 +120,9 @@ def plot_and_save():
             key_sets_fpga = get_key_sets_with_max_entry(dataset, join_type, 16, perf_metric="mean")
             key_sets_cpp_mt = get_key_sets_with_max_entry(dataset, join_type, 16, perf_metric="mean_bfs_dynamic_ms")
             key_sets_cpp_st = get_key_sets_with_max_entry(dataset, join_type, 16, perf_metric="mean_sync_traversal_ms")
-            
+            key_sets_cpp_stripe_mt = stripe_get_key_sets(cpp_stripe_mt_json_dict, dataset, join_type, eval_perf_metric="best_join_ms", output_perf_metric="mean_join_ms")
+            key_sets_cpp_stripe_st = stripe_get_key_sets(cpp_stripe_st_json_dict, dataset, join_type, eval_perf_metric="best_join_ms", output_perf_metric="mean_join_ms")
+    
             key_sets_postgis = get_key_sets_without_max_entry(dataset, join_type, perf_metric="mean_join_time_ms")
             key_sets_sedona = get_key_sets_without_max_entry(dataset, join_type, perf_metric="mean_join_time_ms")
             key_sets_spatialspark = get_key_sets_with_max_entry(dataset, join_type, 64, perf_metric="mean_join_time_ms")
@@ -106,6 +132,8 @@ def plot_and_save():
             fpga_y_mean += get_array_from_dict(fpga_mean_and_error_bar_dict, key_sets_fpga)
             cpp_mt_y_mean += get_array_from_dict(cpp_mt_mean_and_error_bar_dict, key_sets_cpp_mt)
             cpp_st_y_mean += get_array_from_dict(cpp_st_mean_and_error_bar_dict, key_sets_cpp_st)
+            cpp_stripe_mt_y_mean += get_array_from_dict(cpp_stripe_mt_mean_and_error_bar_dict, key_sets_cpp_stripe_mt)
+            cpp_stripe_st_y_mean += get_array_from_dict(cpp_stripe_st_mean_and_error_bar_dict, key_sets_cpp_stripe_st)
             postgis_y_mean += get_array_from_dict(postgis_mean_and_error_bar_dict, key_sets_postgis)
             sedona_y_mean += get_array_from_dict(sedona_mean_and_error_bar_dict, key_sets_sedona)
             spatialspark_y_mean += get_array_from_dict(spatialspark_mean_and_error_bar_dict, key_sets_spatialspark)
@@ -118,16 +146,20 @@ def plot_and_save():
     speedup_baseline = np.array(fpga_y_mean) / np.array(fpga_y_mean)
     speedup_mt = np.array(cpp_mt_y_mean) / np.array(fpga_y_mean)
     speedup_st = np.array(cpp_st_y_mean) / np.array(fpga_y_mean)
+    speedup_stripe_mt = np.array(cpp_stripe_mt_y_mean) / np.array(fpga_y_mean)
+    speedup_stripe_st = np.array(cpp_stripe_st_y_mean) / np.array(fpga_y_mean)
     speedup_postgis = np.array(postgis_y_mean) / np.array(fpga_y_mean)
     speedup_sedona = np.array(sedona_y_mean) / np.array(fpga_y_mean)
     speedup_spatialspark = np.array(spatialspark_y_mean) / np.array(fpga_y_mean)
     speedup_cuspatial = np.array(cuspatial_y_mean) / np.array(fpga_y_mean)
-    print("Speedup over CPP MT: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_mt), np.amax(speedup_mt), speedup_mt))
-    print("Speedup over CPP ST: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_st), np.amax(speedup_st), speedup_st))
+    print("Speedup over CPP Sync Traversal MT: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_mt), np.amax(speedup_mt), speedup_mt))
+    print("Speedup over CPP PBSM MT: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_stripe_mt), np.amax(speedup_stripe_mt), speedup_stripe_mt))
+    print("Speedup over CPP Sync Traversal ST: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_st), np.amax(speedup_st), speedup_st))
+    print("Speedup over CPP PBSM ST: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_stripe_st), np.amax(speedup_stripe_st), speedup_stripe_st))
     print("Speedup over PostGIS: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_postgis), np.amax(speedup_postgis), speedup_postgis))
     print("Speedup over Sedona: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_sedona), np.amax(speedup_sedona), speedup_sedona))
     print("Speedup over Spatial Spark: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_spatialspark), np.amax(speedup_spatialspark), speedup_spatialspark))
-    print("Speedup over Spatial Spark: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_cuspatial), np.amax(speedup_cuspatial), speedup_cuspatial))
+    print("Speedup over cuSpatial: {:.2f} ~ {:.2f} X, {}".format(np.amin(speedup_cuspatial), np.amax(speedup_cuspatial), speedup_cuspatial))
     print(f"===== {dataset}, {join_type} finishes =====")
 
     x_labels = []
@@ -139,16 +171,18 @@ def plot_and_save():
                 x_labels.append(f"{dataset} 10Mx10M\n{join_type}")
 
     x = np.arange(len(x_labels))  # the label locations
-    width = 0.1  # the width of the bars
+    width = 0.08  # the width of the bars
 
     fig, ax = plt.subplots(1, 1, figsize=(9, 3))
-    rects_fpga  = ax.bar(x - 2.5 * width, speedup_baseline, width)
-    rects_cpp_mt  = ax.bar(x - 1.5 * width, speedup_mt, width)
+    rects_fpga  = ax.bar(x - 3.5 * width, speedup_baseline, width)
+    rects_cpp_mt  = ax.bar(x - 2.5 * width, speedup_mt, width)
+    rects_cpp_stripe_mt = ax.bar(x - 1.5 * width, speedup_stripe_mt, width)
     rects_cpp_st = ax.bar(x - 0.5 * width, speedup_st, width)
-    rects_postgis  = ax.bar(x + 0.5 * width, speedup_postgis, width)
-    rects_sedona  = ax.bar(x + 1.5 * width, speedup_sedona, width)
-    rects_spatialspark = ax.bar(x + 2.5 * width, speedup_spatialspark, width)
-    rects_cuspatial = ax.bar(x + 3.5 * width, speedup_cuspatial, width)
+    rects_cpp_stripe_st = ax.bar(x + 0.5 * width, speedup_stripe_st, width)
+    rects_postgis  = ax.bar(x + 1.5 * width, speedup_postgis, width)
+    rects_sedona  = ax.bar(x + 2.5 * width, speedup_sedona, width)
+    rects_spatialspark = ax.bar(x + 3.5 * width, speedup_spatialspark, width, color='#99CCFF')
+    rects_cuspatial = ax.bar(x + 4.5 * width, speedup_cuspatial, width, color='#CB73CB')
 
     label_font = 14
     text_font = 13
@@ -157,14 +191,14 @@ def plot_and_save():
 
     # Add some text for labels, title and custom x-axis tick labels, etc.
     ax.set_ylabel('Normalized Latency', fontsize=label_font)
-    # ax.set_xlabel(f'{dataset}, {join_type}', fontsize=label_font + 1)
+    # ax.set_xlabel(f'Datasets, Size Scales, and Geometries', fontsize=label_font + 1)
     # ax.set_xlabel(f'Dataset sizes', fontsize=label_font)
     # ax.set_title(f'{dataset}, {join_type}', fontsize=label_font)
     ax.set_xticks(x)
     ax.set_xticklabels(x_labels, fontsize=tick_font, color='black')
 
-    ax.legend([rects_fpga, rects_cpp_mt, rects_cpp_st, rects_postgis, rects_sedona, rects_spatialspark, rects_cuspatial], 
-            ["SwiftSpatial (FPGA)", "C++ Multi-thread", "C++ Single-thread", "PostGIS", "Sedona", "SpatialSpark", "cuSpatial (GPU)"], loc=(-0.11, 1.03), ncol=4, \
+    ax.legend([rects_fpga, rects_cpp_mt, rects_cpp_stripe_mt, rects_cpp_st, rects_cpp_stripe_st, rects_postgis, rects_sedona, rects_spatialspark, rects_cuspatial], 
+            ["SwiftSpatial (FPGA)", "C++ Sync Trav Multi-thread", "C++ PBSM Multi-thread", "C++ Sync Trav Single-thread", "C++ PBSM Single-thread", "PostGIS", "Sedona", "SpatialSpark", "cuSpatial (GPU)"], loc=(-0.1, 1.03), ncol=3, \
             facecolor='white', framealpha=1, frameon=False, fontsize=legend_font)
 
     def autolabel(rects):
@@ -176,11 +210,13 @@ def plot_and_save():
                             xy=(rect.get_x() + rect.get_width() / 2, 1.05 * height),
                             xytext=(0, 3),  # 3 points vertical offset
                             textcoords="offset points",
-                            ha='center', va='bottom', rotation=90, fontsize=12)
+                            ha='center', va='bottom', rotation=90, fontsize=10)
 
     autolabel(rects_fpga)
     autolabel(rects_cpp_mt)
+    autolabel(rects_cpp_stripe_mt)
     autolabel(rects_cpp_st)
+    autolabel(rects_cpp_stripe_st)
     autolabel(rects_postgis)
     autolabel(rects_sedona)
     autolabel(rects_spatialspark)
@@ -189,7 +225,7 @@ def plot_and_save():
     plt.yscale("log")
     ax.set(ylim=[0.1, 30 * np.amax(speedup_cuspatial)]) 
     # ax.text(-0.4, 40 * np.amax(concatenated_array), f"{dataset}, {join_type}", fontsize=label_font + 2)
-    concat_array = list(speedup_mt) + list(speedup_st) + list(speedup_postgis) + \
+    concat_array = list(speedup_mt) + list(speedup_stripe_mt) + list(speedup_st) + list(speedup_stripe_st) + list(speedup_postgis) + \
         list(speedup_sedona) + list(speedup_spatialspark) + list(speedup_cuspatial)
     ax.text(-0.4, 10 * np.amax(speedup_cuspatial), "Speedup: {:.1f}~{:.1f}x".format(np.amin(speedup_mt), 
         np.amax(concat_array)), fontsize=text_font, color=get_default_colors()[0], weight='bold')

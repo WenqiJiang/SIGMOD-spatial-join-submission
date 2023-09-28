@@ -3,3 +3,6 @@ a.out
 .vscode
 **__pycache__
 **.nfs*
+generated_data_OSM_park_10M
+generated_data_OSM_road_70M
+generated_data_smaller_uniform*
