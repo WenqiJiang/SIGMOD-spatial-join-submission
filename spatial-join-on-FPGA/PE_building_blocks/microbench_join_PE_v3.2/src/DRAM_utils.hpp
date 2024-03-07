@@ -90,12 +90,16 @@ void write_results(
 #pragma HLS pipeline II=1
 				tmp_result = s_result_pair_directory.read();
 			}
+			// read last signal
+			tmp_result = s_result_pair_directory.read();
 		} else if (!s_intersect_count_leaf.empty()) {
 			int c = s_intersect_count_leaf.read();
 			for (int i = 0; i < c; i++) {
 #pragma HLS pipeline II=1
 				tmp_result = s_result_pair_leaf.read();
 			}
+			// read last signal
+			tmp_result = s_result_pair_leaf.read();
 		} else if (!s_join_finish.empty() && s_result_pair_directory.empty() && s_result_pair_leaf.empty()) {
 			int finish = s_join_finish.read();
 			break;
@@ -104,5 +108,5 @@ void write_results(
 
     // write the number of intersection in the first address
     out_intersect[0] = total_intersect_count;
-	s_join_finish.read();
+//	s_join_finish.read();
 }

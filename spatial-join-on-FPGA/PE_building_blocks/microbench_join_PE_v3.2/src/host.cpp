@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 
     // in init
 
-    int pair_num = 1000 * 1000; // number of page pairs to join
+    int pair_num = 1 * 1; // number of page pairs to join
 	int max_entry_num = 16; // set during indexing
     int	page_bytes = 64 * (1 + (max_entry_num % 3 == 0? max_entry_num / 3 : max_entry_num / 3 + 1)); // typically fixed as 4096
 
