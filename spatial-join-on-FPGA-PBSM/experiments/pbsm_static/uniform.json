@@ -1,0 +1,698 @@
+{
+    "Uniform, 50K x 50K": [
+        {
+            "version": 1,
+            "input1": "../../../../data/uniform/txt/uniform_50000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_50000_polygon_file_1_set_0.txt",
+            "additional_args": "60000",
+            "times": {
+                "kernel_time": [
+                    10.87,
+                    10.8,
+                    10.86
+                ],
+                "total_time": [
+                    11.71,
+                    11.8,
+                    11.91
+                ],
+                "cpu_init_time": [
+                    0.84,
+                    1.44,
+                    0.84
+                ],
+                "cpu_partition_time": [
+                    6.42,
+                    6.66,
+                    6.35
+                ],
+                "cpu_refine_time": [
+                    12.87,
+                    12.87,
+                    12.83
+                ],
+                "cpu_prepare_time": [
+                    10.72,
+                    11.72,
+                    10.83
+                ],
+                "cpu_time": [
+                    30.85,
+                    32.69,
+                    30.84
+                ]
+            }
+        },
+        {
+            "version": 2,
+            "input1": "../../../../data/uniform/txt/uniform_50000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_50000_polygon_file_1_set_0.txt",
+            "additional_args": "60000",
+            "times": {
+                "kernel_time": [
+                    5.55,
+                    5.58,
+                    5.51
+                ],
+                "total_time": [
+                    6.67,
+                    6.69,
+                    6.4
+                ],
+                "cpu_init_time": [
+                    0.84,
+                    0.85,
+                    0.83
+                ],
+                "cpu_partition_time": [
+                    10.89,
+                    10.82,
+                    11.01
+                ],
+                "cpu_refine_time": [
+                    8.04,
+                    8.54,
+                    8.07
+                ],
+                "cpu_prepare_time": [
+                    9.99,
+                    10.89,
+                    10.32
+                ],
+                "cpu_time": [
+                    29.76,
+                    31.1,
+                    30.23
+                ]
+            }
+        },
+        {
+            "version": 4,
+            "input1": "../../../../data/uniform/txt/uniform_50000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_50000_polygon_file_1_set_0.txt",
+            "additional_args": "60000",
+            "times": {
+                "kernel_time": [
+                    2.93,
+                    2.98,
+                    2.86
+                ],
+                "total_time": [
+                    3.93,
+                    4.07,
+                    3.89
+                ],
+                "cpu_init_time": [
+                    0.83,
+                    0.83,
+                    0.83
+                ],
+                "cpu_partition_time": [
+                    8.25,
+                    8.27,
+                    8.04
+                ],
+                "cpu_refine_time": [
+                    6.98,
+                    5.59,
+                    5.63
+                ],
+                "cpu_prepare_time": [
+                    9.77,
+                    11.13,
+                    10.33
+                ],
+                "cpu_time": [
+                    25.83,
+                    25.82,
+                    24.83
+                ]
+            }
+        },
+        {
+            "version": 8,
+            "input1": "../../../../data/uniform/txt/uniform_50000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_50000_polygon_file_1_set_0.txt",
+            "additional_args": "60000",
+            "times": {
+                "kernel_time": [
+                    1.63,
+                    1.61,
+                    1.65
+                ],
+                "total_time": [
+                    2.67,
+                    2.74,
+                    2.71
+                ],
+                "cpu_init_time": [
+                    0.85,
+                    0.83,
+                    0.86
+                ],
+                "cpu_partition_time": [
+                    7.08,
+                    6.69,
+                    8.15
+                ],
+                "cpu_refine_time": [
+                    4.68,
+                    4.43,
+                    5.11
+                ],
+                "cpu_prepare_time": [
+                    11.22,
+                    10.39,
+                    10.73
+                ],
+                "cpu_time": [
+                    23.83,
+                    22.35,
+                    24.85
+                ]
+            }
+        }
+    ],
+    "Uniform, 50K x 100K": [
+        {
+            "version": 1,
+            "input1": "../../../../data/uniform/txt/uniform_50000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_100000_polygon_file_1_set_0.txt",
+            "additional_args": "60000",
+            "times": {
+                "kernel_time": [
+                    14.09,
+                    14.13,
+                    14.13
+                ],
+                "total_time": [
+                    15.09,
+                    15.23,
+                    15.0
+                ],
+                "cpu_init_time": [
+                    1.28,
+                    1.24,
+                    1.26
+                ],
+                "cpu_partition_time": [
+                    8.7,
+                    8.76,
+                    8.79
+                ],
+                "cpu_refine_time": [
+                    23.52,
+                    23.53,
+                    23.53
+                ],
+                "cpu_prepare_time": [
+                    16.5,
+                    16.56,
+                    16.58
+                ],
+                "cpu_time": [
+                    50.0,
+                    50.09,
+                    50.17
+                ]
+            }
+        },
+        {
+            "version": 2,
+            "input1": "../../../../data/uniform/txt/uniform_50000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_100000_polygon_file_1_set_0.txt",
+            "additional_args": "60000",
+            "times": {
+                "kernel_time": [
+                    7.21,
+                    7.31,
+                    7.24
+                ],
+                "total_time": [
+                    8.16,
+                    8.46,
+                    8.2
+                ],
+                "cpu_init_time": [
+                    1.24,
+                    1.24,
+                    1.3
+                ],
+                "cpu_partition_time": [
+                    13.18,
+                    13.39,
+                    13.32
+                ],
+                "cpu_refine_time": [
+                    13.62,
+                    13.44,
+                    13.6
+                ],
+                "cpu_prepare_time": [
+                    16.12,
+                    14.84,
+                    14.71
+                ],
+                "cpu_time": [
+                    44.15,
+                    42.92,
+                    42.93
+                ]
+            }
+        },
+        {
+            "version": 4,
+            "input1": "../../../../data/uniform/txt/uniform_50000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_100000_polygon_file_1_set_0.txt",
+            "additional_args": "60000",
+            "times": {
+                "kernel_time": [
+                    3.79,
+                    3.87,
+                    3.81
+                ],
+                "total_time": [
+                    4.86,
+                    4.88,
+                    4.96
+                ],
+                "cpu_init_time": [
+                    1.27,
+                    1.25,
+                    1.25
+                ],
+                "cpu_partition_time": [
+                    11.63,
+                    11.01,
+                    11.38
+                ],
+                "cpu_refine_time": [
+                    8.76,
+                    9.68,
+                    9.07
+                ],
+                "cpu_prepare_time": [
+                    17.28,
+                    15.98,
+                    17.29
+                ],
+                "cpu_time": [
+                    38.93,
+                    37.91,
+                    38.99
+                ]
+            }
+        },
+        {
+            "version": 8,
+            "input1": "../../../../data/uniform/txt/uniform_50000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_100000_polygon_file_1_set_0.txt",
+            "additional_args": "60000",
+            "times": {
+                "kernel_time": [
+                    1.98,
+                    2.1,
+                    1.93
+                ],
+                "total_time": [
+                    3.16,
+                    3.32,
+                    3.14
+                ],
+                "cpu_init_time": [
+                    1.26,
+                    1.87,
+                    1.31
+                ],
+                "cpu_partition_time": [
+                    9.95,
+                    10.14,
+                    9.09
+                ],
+                "cpu_refine_time": [
+                    5.94,
+                    7.12,
+                    6.05
+                ],
+                "cpu_prepare_time": [
+                    16.44,
+                    16.77,
+                    15.66
+                ],
+                "cpu_time": [
+                    33.59,
+                    35.9,
+                    32.12
+                ]
+            }
+        }
+    ],
+    "Uniform, 200K x 200K": [
+        {
+            "version": 1,
+            "input1": "../../../../data/uniform/txt/uniform_200000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_200000_polygon_file_1_set_0.txt",
+            "additional_args": "120000",
+            "times": {
+                "kernel_time": [
+                    42.93,
+                    42.86,
+                    42.95
+                ],
+                "total_time": [
+                    44.52,
+                    44.46,
+                    44.52
+                ],
+                "cpu_init_time": [
+                    3.34,
+                    3.34,
+                    3.9
+                ],
+                "cpu_partition_time": [
+                    23.01,
+                    23.03,
+                    22.96
+                ],
+                "cpu_refine_time": [
+                    66.02,
+                    65.58,
+                    65.49
+                ],
+                "cpu_prepare_time": [
+                    42.73,
+                    42.6,
+                    42.54
+                ],
+                "cpu_time": [
+                    135.09,
+                    134.55,
+                    134.89
+                ]
+            }
+        },
+        {
+            "version": 2,
+            "input1": "../../../../data/uniform/txt/uniform_200000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_200000_polygon_file_1_set_0.txt",
+            "additional_args": "120000",
+            "times": {
+                "kernel_time": [
+                    21.82,
+                    21.77,
+                    21.7
+                ],
+                "total_time": [
+                    23.5,
+                    23.29,
+                    23.52
+                ],
+                "cpu_init_time": [
+                    3.33,
+                    3.37,
+                    3.78
+                ],
+                "cpu_partition_time": [
+                    29.12,
+                    25.5,
+                    24.7
+                ],
+                "cpu_refine_time": [
+                    36.01,
+                    34.12,
+                    33.79
+                ],
+                "cpu_prepare_time": [
+                    40.18,
+                    37.35,
+                    37.37
+                ],
+                "cpu_time": [
+                    108.64,
+                    100.34,
+                    99.65
+                ]
+            }
+        },
+        {
+            "version": 4,
+            "input1": "../../../../data/uniform/txt/uniform_200000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_200000_polygon_file_1_set_0.txt",
+            "additional_args": "120000",
+            "times": {
+                "kernel_time": [
+                    11.07,
+                    10.98,
+                    11.07
+                ],
+                "total_time": [
+                    12.84,
+                    12.67,
+                    12.77
+                ],
+                "cpu_init_time": [
+                    3.74,
+                    3.36,
+                    3.48
+                ],
+                "cpu_partition_time": [
+                    21.07,
+                    22.14,
+                    22.59
+                ],
+                "cpu_refine_time": [
+                    17.61,
+                    18.14,
+                    19.55
+                ],
+                "cpu_prepare_time": [
+                    42.53,
+                    41.44,
+                    43.2
+                ],
+                "cpu_time": [
+                    84.96,
+                    85.08,
+                    88.82
+                ]
+            }
+        },
+        {
+            "version": 8,
+            "input1": "../../../../data/uniform/txt/uniform_200000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_200000_polygon_file_1_set_0.txt",
+            "additional_args": "120000",
+            "times": {
+                "kernel_time": [
+                    5.67,
+                    5.82,
+                    5.63
+                ],
+                "total_time": [
+                    7.31,
+                    7.39,
+                    7.31
+                ],
+                "cpu_init_time": [
+                    3.57,
+                    3.37,
+                    3.89
+                ],
+                "cpu_partition_time": [
+                    20.86,
+                    20.11,
+                    22.5
+                ],
+                "cpu_refine_time": [
+                    11.59,
+                    12.53,
+                    11.73
+                ],
+                "cpu_prepare_time": [
+                    40.69,
+                    40.27,
+                    40.45
+                ],
+                "cpu_time": [
+                    76.71,
+                    76.28,
+                    78.56
+                ]
+            }
+        }
+    ],
+    "Uniform, 1M x 1M": [
+        {
+            "version": 1,
+            "input1": "../../../../data/uniform/txt/uniform_1000000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_1000000_polygon_file_1_set_0.txt",
+            "additional_args": "1200000",
+            "times": {
+                "kernel_time": [
+                    245.4,
+                    245.32,
+                    245.38
+                ],
+                "total_time": [
+                    251.75,
+                    252.15,
+                    251.91
+                ],
+                "cpu_init_time": [
+                    17.14,
+                    17.64,
+                    17.32
+                ],
+                "cpu_partition_time": [
+                    134.37,
+                    147.85,
+                    127.88
+                ],
+                "cpu_refine_time": [
+                    400.81,
+                    408.34,
+                    400.45
+                ],
+                "cpu_prepare_time": [
+                    205.27,
+                    255.35,
+                    206.34
+                ],
+                "cpu_time": [
+                    757.59,
+                    829.18,
+                    751.99
+                ]
+            }
+        },
+        {
+            "version": 2,
+            "input1": "../../../../data/uniform/txt/uniform_1000000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_1000000_polygon_file_1_set_0.txt",
+            "additional_args": "1200000",
+            "times": {
+                "kernel_time": [
+                    123.34,
+                    123.08,
+                    123.29
+                ],
+                "total_time": [
+                    129.82,
+                    129.51,
+                    129.52
+                ],
+                "cpu_init_time": [
+                    16.81,
+                    16.75,
+                    16.98
+                ],
+                "cpu_partition_time": [
+                    111.11,
+                    101.99,
+                    89.14
+                ],
+                "cpu_refine_time": [
+                    218.13,
+                    211.84,
+                    214.73
+                ],
+                "cpu_prepare_time": [
+                    194.44,
+                    209.49,
+                    193.61
+                ],
+                "cpu_time": [
+                    540.49,
+                    540.07,
+                    514.46
+                ]
+            }
+        },
+        {
+            "version": 4,
+            "input1": "../../../../data/uniform/txt/uniform_1000000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_1000000_polygon_file_1_set_0.txt",
+            "additional_args": "1200000",
+            "times": {
+                "kernel_time": [
+                    61.58,
+                    62.07,
+                    61.92
+                ],
+                "total_time": [
+                    67.96,
+                    68.38,
+                    68.26
+                ],
+                "cpu_init_time": [
+                    17.11,
+                    17.5,
+                    17.29
+                ],
+                "cpu_partition_time": [
+                    79.79,
+                    71.89,
+                    70.07
+                ],
+                "cpu_refine_time": [
+                    110.09,
+                    111.51,
+                    107.89
+                ],
+                "cpu_prepare_time": [
+                    207.74,
+                    188.15,
+                    181.03
+                ],
+                "cpu_time": [
+                    414.73,
+                    389.05,
+                    376.27
+                ]
+            }
+        },
+        {
+            "version": 8,
+            "input1": "../../../../data/uniform/txt/uniform_1000000_polygon_file_0_set_0.txt",
+            "input2": "../../../../data/uniform/txt/uniform_1000000_polygon_file_1_set_0.txt",
+            "additional_args": "1200000",
+            "times": {
+                "kernel_time": [
+                    31.11,
+                    31.21,
+                    31.3
+                ],
+                "total_time": [
+                    37.34,
+                    37.34,
+                    37.62
+                ],
+                "cpu_init_time": [
+                    17.04,
+                    16.7,
+                    16.96
+                ],
+                "cpu_partition_time": [
+                    72.17,
+                    61.36,
+                    84.31
+                ],
+                "cpu_refine_time": [
+                    67.38,
+                    63.17,
+                    66.71
+                ],
+                "cpu_prepare_time": [
+                    208.4,
+                    169.74,
+                    198.8
+                ],
+                "cpu_time": [
+                    364.99,
+                    310.98,
+                    366.78
+                ]
+            }
+        }
+    ]
+}

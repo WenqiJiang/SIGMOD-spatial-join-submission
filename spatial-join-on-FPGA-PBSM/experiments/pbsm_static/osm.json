@@ -1,0 +1,778 @@
+{
+  "OSM, 50K x 50K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/osm/txt/OSM_50000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_50000_polygon_file_1.txt",
+      "additional_args": "60000",
+      "times": {
+        "kernel_time": [
+          9.78,
+          9.66,
+          9.71
+        ],
+        "total_time": [
+          10.79,
+          10.69,
+          10.7
+        ],
+        "cpu_init_time": [
+          0.84,
+          0.96,
+          0.83
+        ],
+        "cpu_partition_time": [
+          5.16,
+          5.15,
+          5.23
+        ],
+        "cpu_refine_time": [
+          33.33,
+          33.26,
+          33.26
+        ],
+        "cpu_prepare_time": [
+          11.86,
+          11.88,
+          11.94
+        ],
+        "cpu_time": [
+          51.19,
+          51.26,
+          51.26
+        ],
+        "compute_unit_avg_time": [
+          9.46052,
+          9.46044,
+          9.46055
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/osm/txt/OSM_50000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_50000_polygon_file_1.txt",
+      "additional_args": "60000",
+      "times": {
+        "kernel_time": [
+          5.14,
+          5.04,
+          5.16
+        ],
+        "total_time": [
+          6.16,
+          5.99,
+          6.28
+        ],
+        "cpu_init_time": [
+          0.93,
+          0.83,
+          1.01
+        ],
+        "cpu_partition_time": [
+          8.76,
+          9.02,
+          8.6
+        ],
+        "cpu_refine_time": [
+          21.3,
+          23.71,
+          19.72
+        ],
+        "cpu_prepare_time": [
+          11.43,
+          11.52,
+          11.53
+        ],
+        "cpu_time": [
+          42.42,
+          45.08,
+          40.85
+        ],
+        "compute_unit_avg_time": [
+          4.84158,
+          4.78662,
+          4.76958
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/osm/txt/OSM_50000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_50000_polygon_file_1.txt",
+      "additional_args": "60000",
+      "times": {
+        "kernel_time": [
+          2.81,
+          2.71,
+          2.71
+        ],
+        "total_time": [
+          3.96,
+          3.8,
+          3.77
+        ],
+        "cpu_init_time": [
+          1.19,
+          0.83,
+          1.23
+        ],
+        "cpu_partition_time": [
+          6.16,
+          6.18,
+          6.19
+        ],
+        "cpu_refine_time": [
+          19.99,
+          19.14,
+          23.73
+        ],
+        "cpu_prepare_time": [
+          12.27,
+          11.65,
+          12.27
+        ],
+        "cpu_time": [
+          39.61,
+          37.8,
+          43.41
+        ],
+        "compute_unit_avg_time": [
+          2.52964,
+          2.43911,
+          2.44036
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/osm/txt/OSM_50000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_50000_polygon_file_1.txt",
+      "additional_args": "60000",
+      "times": {
+        "kernel_time": [
+          1.57,
+          1.51,
+          1.49
+        ],
+        "total_time": [
+          2.61,
+          2.51,
+          2.51
+        ],
+        "cpu_init_time": [
+          0.85,
+          0.88,
+          0.83
+        ],
+        "cpu_partition_time": [
+          6.08,
+          6.07,
+          6.08
+        ],
+        "cpu_refine_time": [
+          20.43,
+          20.35,
+          19.69
+        ],
+        "cpu_prepare_time": [
+          12.3,
+          11.8,
+          13.05
+        ],
+        "cpu_time": [
+          39.64,
+          39.09,
+          39.66
+        ],
+        "compute_unit_avg_time": [
+          1.32405,
+          1.27456,
+          1.27462
+        ]
+      }
+    }
+  ],
+  "OSM, 50K x 100K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/osm/txt/OSM_50000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_100000_polygon_file_1.txt",
+      "additional_args": "60000",
+      "times": {
+        "kernel_time": [
+          10.29,
+          10.33,
+          10.34
+        ],
+        "total_time": [
+          11.29,
+          11.3,
+          11.39
+        ],
+        "cpu_init_time": [
+          1.25,
+          1.26,
+          1.25
+        ],
+        "cpu_partition_time": [
+          7.77,
+          7.85,
+          7.85
+        ],
+        "cpu_refine_time": [
+          47.21,
+          47.39,
+          47.66
+        ],
+        "cpu_prepare_time": [
+          13.41,
+          13.47,
+          13.47
+        ],
+        "cpu_time": [
+          69.63,
+          69.97,
+          70.22
+        ],
+        "compute_unit_avg_time": [
+          10.0838,
+          10.0837,
+          210.576
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/osm/txt/OSM_50000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_100000_polygon_file_1.txt",
+      "additional_args": "60000",
+      "times": {
+        "kernel_time": [
+          5.42,
+          5.44,
+          5.49
+        ],
+        "total_time": [
+          6.51,
+          6.46,
+          6.67
+        ],
+        "cpu_init_time": [
+          1.51,
+          1.57,
+          1.68
+        ],
+        "cpu_partition_time": [
+          13.07,
+          11.99,
+          13.34
+        ],
+        "cpu_refine_time": [
+          27.16,
+          26.44,
+          26.85
+        ],
+        "cpu_prepare_time": [
+          12.92,
+          13.36,
+          13.29
+        ],
+        "cpu_time": [
+          54.65,
+          53.36,
+          55.16
+        ],
+        "compute_unit_avg_time": [
+          5.05227,
+          5.15528,
+          5.16499
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/osm/txt/OSM_50000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_100000_polygon_file_1.txt",
+      "additional_args": "60000",
+      "times": {
+        "kernel_time": [
+          2.96,
+          2.94,
+          2.85
+        ],
+        "total_time": [
+          3.98,
+          4.07,
+          3.94
+        ],
+        "cpu_init_time": [
+          1.51,
+          1.27,
+          1.62
+        ],
+        "cpu_partition_time": [
+          8.89,
+          9.02,
+          9.15
+        ],
+        "cpu_refine_time": [
+          26.92,
+          27.14,
+          26.81
+        ],
+        "cpu_prepare_time": [
+          21.72,
+          15.75,
+          14.25
+        ],
+        "cpu_time": [
+          59.05,
+          53.18,
+          51.83
+        ],
+        "compute_unit_avg_time": [
+          2.6267,
+          2.60551,
+          2.62529
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/osm/txt/OSM_50000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_100000_polygon_file_1.txt",
+      "additional_args": "60000",
+      "times": {
+        "kernel_time": [
+          1.59,
+          1.62,
+          1.64
+        ],
+        "total_time": [
+          2.63,
+          2.69,
+          2.91
+        ],
+        "cpu_init_time": [
+          1.26,
+          1.26,
+          1.26
+        ],
+        "cpu_partition_time": [
+          8.01,
+          8.24,
+          7.66
+        ],
+        "cpu_refine_time": [
+          23.85,
+          23.61,
+          24.46
+        ],
+        "cpu_prepare_time": [
+          14.55,
+          13.77,
+          13.72
+        ],
+        "cpu_time": [
+          47.66,
+          46.88,
+          47.09
+        ],
+        "compute_unit_avg_time": [
+          1.42959,
+          1.38034,
+          1.38322
+        ]
+      }
+    }
+  ],
+  "OSM, 200K x 200K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/osm/txt/OSM_200000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_200000_polygon_file_1.txt",
+      "additional_args": "120000",
+      "times": {
+        "kernel_time": [
+          10.03,
+          9.98,
+          10.01
+        ],
+        "total_time": [
+          11.27,
+          11.23,
+          11.06
+        ],
+        "cpu_init_time": [
+          3.41,
+          3.37,
+          3.35
+        ],
+        "cpu_partition_time": [
+          20.02,
+          19.97,
+          19.98
+        ],
+        "cpu_refine_time": [
+          121.87,
+          121.56,
+          121.87
+        ],
+        "cpu_prepare_time": [
+          17.05,
+          16.99,
+          17.04
+        ],
+        "cpu_time": [
+          162.36,
+          161.89,
+          162.23
+        ],
+        "compute_unit_avg_time": [
+          9.77616,
+          9.77623,
+          9.77623
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/osm/txt/OSM_200000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_200000_polygon_file_1.txt",
+      "additional_args": "120000",
+      "times": {
+        "kernel_time": [
+          5.3,
+          5.2,
+          5.38
+        ],
+        "total_time": [
+          6.51,
+          6.6,
+          6.5
+        ],
+        "cpu_init_time": [
+          3.6,
+          5.39,
+          5.17
+        ],
+        "cpu_partition_time": [
+          25.73,
+          25.12,
+          25.59
+        ],
+        "cpu_refine_time": [
+          65.21,
+          64.46,
+          64.74
+        ],
+        "cpu_prepare_time": [
+          17.45,
+          17.52,
+          17.93
+        ],
+        "cpu_time": [
+          111.99,
+          112.49,
+          113.44
+        ],
+        "compute_unit_avg_time": [
+          4.95537,
+          4.93416,
+          5.00216
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/osm/txt/OSM_200000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_200000_polygon_file_1.txt",
+      "additional_args": "120000",
+      "times": {
+        "kernel_time": [
+          2.76,
+          2.83,
+          2.83
+        ],
+        "total_time": [
+          4.04,
+          4.24,
+          4.07
+        ],
+        "cpu_init_time": [
+          3.66,
+          4.01,
+          3.32
+        ],
+        "cpu_partition_time": [
+          22.09,
+          25.69,
+          21.15
+        ],
+        "cpu_refine_time": [
+          57.6,
+          53.26,
+          51.69
+        ],
+        "cpu_prepare_time": [
+          20.5,
+          18.57,
+          18.16
+        ],
+        "cpu_time": [
+          103.84,
+          101.54,
+          94.32
+        ],
+        "compute_unit_avg_time": [
+          2.49056,
+          2.54725,
+          2.53723
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/osm/txt/OSM_200000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_200000_polygon_file_1.txt",
+      "additional_args": "120000",
+      "times": {
+        "kernel_time": [
+          1.55,
+          1.59,
+          1.63
+        ],
+        "total_time": [
+          2.62,
+          2.82,
+          2.76
+        ],
+        "cpu_init_time": [
+          3.35,
+          3.77,
+          3.32
+        ],
+        "cpu_partition_time": [
+          19.81,
+          19.08,
+          17.51
+        ],
+        "cpu_refine_time": [
+          49.24,
+          48.78,
+          47.66
+        ],
+        "cpu_prepare_time": [
+          25.61,
+          23.12,
+          24.93
+        ],
+        "cpu_time": [
+          98.01,
+          94.76,
+          93.42
+        ],
+        "compute_unit_avg_time": [
+          1.29241,
+          1.29107,
+          1.31363
+        ]
+      }
+    }
+  ],
+  "OSM, 1M x 1M": [
+    {
+      "version": 1,
+      "input1": "../../../../data/osm/txt/OSM_1000000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_1000000_polygon_file_1.txt",
+      "additional_args": "1200000",
+      "times": {
+        "kernel_time": [
+          120.22,
+          120.29,
+          120.31
+        ],
+        "total_time": [
+          125.8,
+          126.04,
+          126.11
+        ],
+        "cpu_init_time": [
+          16.96,
+          17.68,
+          17.01
+        ],
+        "cpu_partition_time": [
+          121.42,
+          120.38,
+          120.77
+        ],
+        "cpu_refine_time": [
+          725.33,
+          724.35,
+          724.81
+        ],
+        "cpu_prepare_time": [
+          211.45,
+          218.51,
+          219.03
+        ],
+        "cpu_time": [
+          1075.16,
+          1080.92,
+          1081.62
+        ],
+        "compute_unit_avg_time": [
+          119.859,
+          119.859,
+          119.859
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/osm/txt/OSM_1000000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_1000000_polygon_file_1.txt",
+      "additional_args": "1200000",
+      "times": {
+        "kernel_time": [
+          60.72,
+          60.6,
+          60.69
+        ],
+        "total_time": [
+          66.5,
+          66.25,
+          66.4
+        ],
+        "cpu_init_time": [
+          17.09,
+          17.15,
+          17.32
+        ],
+        "cpu_partition_time": [
+          91.85,
+          94.74,
+          87.17
+        ],
+        "cpu_refine_time": [
+          466.49,
+          475.6,
+          464.87
+        ],
+        "cpu_prepare_time": [
+          209.68,
+          214.05,
+          208.21
+        ],
+        "cpu_time": [
+          785.12,
+          801.54,
+          777.56
+        ],
+        "compute_unit_avg_time": [
+          60.2234,
+          60.2727,
+          60.2654
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/osm/txt/OSM_1000000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_1000000_polygon_file_1.txt",
+      "additional_args": "1200000",
+      "times": {
+        "kernel_time": [
+          30.8,
+          30.76,
+          30.82
+        ],
+        "total_time": [
+          36.22,
+          36.37,
+          36.29
+        ],
+        "cpu_init_time": [
+          17.04,
+          17.06,
+          17.25
+        ],
+        "cpu_partition_time": [
+          81.43,
+          73.58,
+          82.48
+        ],
+        "cpu_refine_time": [
+          477.08,
+          445.62,
+          480.33
+        ],
+        "cpu_prepare_time": [
+          210.91,
+          186.89,
+          211.83
+        ],
+        "cpu_time": [
+          786.47,
+          723.15,
+          791.89
+        ],
+        "compute_unit_avg_time": [
+          30.5028,
+          30.4278,
+          30.4999
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/osm/txt/OSM_1000000_polygon_file_0.txt",
+      "input2": "../../../../data/osm/txt/OSM_1000000_polygon_file_1.txt",
+      "additional_args": "1200000",
+      "times": {
+        "kernel_time": [
+          15.64,
+          15.95,
+          15.98
+        ],
+        "total_time": [
+          21.17,
+          21.63,
+          21.62
+        ],
+        "cpu_init_time": [
+          17.22,
+          17.0,
+          16.92
+        ],
+        "cpu_partition_time": [
+          72.49,
+          66.31,
+          66.81
+        ],
+        "cpu_refine_time": [
+          439.77,
+          475.76,
+          467.7
+        ],
+        "cpu_prepare_time": [
+          206.95,
+          205.67,
+          206.24
+        ],
+        "cpu_time": [
+          736.43,
+          764.74,
+          757.67
+        ],
+        "compute_unit_avg_time": [
+          15.4233,
+          15.5236,
+          15.5419
+        ]
+      }
+    }
+  ]
+}

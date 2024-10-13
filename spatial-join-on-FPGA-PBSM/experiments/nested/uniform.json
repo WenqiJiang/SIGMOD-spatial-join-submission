@@ -1,0 +1,470 @@
+{
+  "Uniform, 10K x 10K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/uniform/bin/uniform_10000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_10000_polygon_file_1_set_0.bin",
+      "additional_args": "10240",
+      "times": {
+        "kernel_time": [
+          1333.72,
+          1333.72,
+          1333.75
+        ],
+        "total_time": [
+          1334.55,
+          1334.6,
+          1334.6
+        ],
+        "compute_unit_avg_time": [
+          1333.4,
+          1333.4,
+          1333.4
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/uniform/bin/uniform_10000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_10000_polygon_file_1_set_0.bin",
+      "additional_args": "10240",
+      "times": {
+        "kernel_time": [
+          667.19,
+          667.13,
+          667.13
+        ],
+        "total_time": [
+          667.85,
+          667.79,
+          667.84
+        ],
+        "compute_unit_avg_time": [
+          666.835,
+          666.836,
+          666.835
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/uniform/bin/uniform_10000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_10000_polygon_file_1_set_0.bin",
+      "additional_args": "10240",
+      "times": {
+        "kernel_time": [
+          334.01,
+          334.0,
+          333.89
+        ],
+        "total_time": [
+          334.75,
+          334.76,
+          334.7
+        ],
+        "compute_unit_avg_time": [
+          333.619,
+          333.619,
+          333.619
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/uniform/bin/uniform_10000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_10000_polygon_file_1_set_0.bin",
+      "additional_args": "10240",
+      "times": {
+        "kernel_time": [
+          167.17,
+          167.09,
+          167.18
+        ],
+        "total_time": [
+          168.1,
+          168.03,
+          168.0
+        ],
+        "compute_unit_avg_time": [
+          166.819,
+          166.818,
+          166.818
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/uniform/bin/uniform_10000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_10000_polygon_file_1_set_0.bin",
+      "additional_args": "10240",
+      "times": {
+        "kernel_time": [
+          88.21,
+          88.34,
+          88.36
+        ],
+        "total_time": [
+          88.93,
+          89.12,
+          89.18
+        ],
+        "compute_unit_avg_time": [
+          87.0896,
+          87.0892,
+          87.0896
+        ]
+      }
+    }
+  ],
+  "Uniform, 50K x 50K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_50000_polygon_file_1_set_0.bin",
+      "additional_args": "1024",
+      "times": {
+        "kernel_time": [
+          33334.0,
+          33333.94,
+          33333.96
+        ],
+        "total_time": [
+          33335.11,
+          33334.92,
+          33334.94
+        ],
+        "compute_unit_avg_time": [
+          33333.5,
+          33333.5,
+          33333.5
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_50000_polygon_file_1_set_0.bin",
+      "additional_args": "1024",
+      "times": {
+        "kernel_time": [
+          16667.86,
+          16667.81,
+          16668.02
+        ],
+        "total_time": [
+          16668.78,
+          16668.72,
+          16669.07
+        ],
+        "compute_unit_avg_time": [
+          16667.4,
+          16667.4,
+          16667.4
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_50000_polygon_file_1_set_0.bin",
+      "additional_args": "1024",
+      "times": {
+        "kernel_time": [
+          8334.5,
+          8334.38,
+          8334.42
+        ],
+        "total_time": [
+          8335.31,
+          8335.34,
+          8335.38
+        ],
+        "compute_unit_avg_time": [
+          8334.05,
+          8334.04,
+          8334.04
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_50000_polygon_file_1_set_0.bin",
+      "additional_args": "1024",
+      "times": {
+        "kernel_time": [
+          4168.38,
+          4168.34,
+          4168.37
+        ],
+        "total_time": [
+          4169.37,
+          4169.21,
+          4169.37
+        ],
+        "compute_unit_avg_time": [
+          4168.03,
+          4168.02,
+          4168.02
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_50000_polygon_file_1_set_0.bin",
+      "additional_args": "1024",
+      "times": {
+        "kernel_time": [
+          2194.06,
+          2193.93,
+          2193.92
+        ],
+        "total_time": [
+          2194.96,
+          2194.84,
+          2194.73
+        ],
+        "compute_unit_avg_time": [
+          2170.85,
+          2170.85,
+          2170.85
+        ]
+      }
+    }
+  ],
+  "Uniform, 50K x 100K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          66667.46,
+          66667.54,
+          66667.63
+        ],
+        "total_time": [
+          66669.4,
+          66668.71,
+          66668.86
+        ],
+        "compute_unit_avg_time": [
+          66667.0,
+          66667.0,
+          66667.0
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          33335.38,
+          33335.36,
+          33335.59
+        ],
+        "total_time": [
+          33336.55,
+          33336.61,
+          33336.78
+        ],
+        "compute_unit_avg_time": [
+          33334.8,
+          33334.8,
+          33334.8
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          16668.45,
+          16668.49,
+          16668.51
+        ],
+        "total_time": [
+          16669.59,
+          16669.69,
+          16669.58
+        ],
+        "compute_unit_avg_time": [
+          16668.1,
+          16668.1,
+          16668.1
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          8336.44,
+          8336.43,
+          8336.43
+        ],
+        "total_time": [
+          8337.64,
+          8337.61,
+          8337.59
+        ],
+        "compute_unit_avg_time": [
+          8336.04,
+          8336.04,
+          8336.04
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/uniform/bin/uniform_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          4387.73,
+          4387.74,
+          4387.76
+        ],
+        "total_time": [
+          4388.87,
+          4388.9,
+          4388.96
+        ],
+        "compute_unit_avg_time": [
+          4341.7,
+          4341.7,
+          4341.7
+        ]
+      }
+    }
+  ],
+  "Uniform, 100K x 100K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/uniform/bin/uniform_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          133334.84,
+          133334.88,
+          133334.89
+        ],
+        "total_time": [
+          133336.05,
+          133336.04,
+          133336.2
+        ],
+        "compute_unit_avg_time": [
+          133334.0,
+          133334.0,
+          133334.0
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/uniform/bin/uniform_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          66668.97,
+          66669.02,
+          66668.98
+        ],
+        "total_time": [
+          66670.26,
+          66670.46,
+          66670.27
+        ],
+        "compute_unit_avg_time": [
+          66668.3,
+          66668.3,
+          66668.3
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/uniform/bin/uniform_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          33336.67,
+          33336.71,
+          33336.67
+        ],
+        "total_time": [
+          33338.1,
+          33337.97,
+          33337.86
+        ],
+        "compute_unit_avg_time": [
+          33336.2,
+          33336.2,
+          33336.2
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/uniform/bin/uniform_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          16668.54,
+          16668.5,
+          16668.54
+        ],
+        "total_time": [
+          16670.04,
+          16669.75,
+          16670.04
+        ],
+        "compute_unit_avg_time": [
+          16668.1,
+          16668.1,
+          16668.1
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/uniform/bin/uniform_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/uniform/bin/uniform_100000_polygon_file_1_set_0.bin",
+      "additional_args": "102400",
+      "times": {
+        "kernel_time": [
+          8775.13,
+          8775.19,
+          8775.16
+        ],
+        "total_time": [
+          8776.37,
+          8776.65,
+          8776.41
+        ],
+        "compute_unit_avg_time": [
+          8683.38,
+          8683.38,
+          8683.38
+        ]
+      }
+    }
+  ]
+}

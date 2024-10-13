@@ -1,0 +1,1333 @@
+{
+  "pbsm/parallel": [
+    {
+      "threads": 1,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.86,
+          "cpu_partition_time": 18.54,
+          "cpu_refine_time": 50.25,
+          "cpu_prepare_time": 8.25,
+          "cpu_time": 77.91
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 18.54,
+          "cpu_refine_time": 50.18,
+          "cpu_prepare_time": 8.24,
+          "cpu_time": 77.7
+        },
+        {
+          "cpu_init_time": 0.84,
+          "cpu_partition_time": 18.58,
+          "cpu_refine_time": 50.41,
+          "cpu_prepare_time": 8.26,
+          "cpu_time": 78.09
+        },
+        {
+          "cpu_init_time": 0.88,
+          "cpu_partition_time": 18.92,
+          "cpu_refine_time": 50.29,
+          "cpu_prepare_time": 8.26,
+          "cpu_time": 78.33
+        },
+        {
+          "cpu_init_time": 0.9,
+          "cpu_partition_time": 18.57,
+          "cpu_refine_time": 50.21,
+          "cpu_prepare_time": 8.26,
+          "cpu_time": 77.93
+        },
+        {
+          "cpu_init_time": 0.94,
+          "cpu_partition_time": 18.53,
+          "cpu_refine_time": 50.49,
+          "cpu_prepare_time": 8.27,
+          "cpu_time": 78.24
+        },
+        {
+          "cpu_init_time": 0.82,
+          "cpu_partition_time": 18.53,
+          "cpu_refine_time": 50.35,
+          "cpu_prepare_time": 8.23,
+          "cpu_time": 77.94
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 18.52,
+          "cpu_refine_time": 50.24,
+          "cpu_prepare_time": 8.27,
+          "cpu_time": 77.76
+        },
+        {
+          "cpu_init_time": 0.83,
+          "cpu_partition_time": 18.55,
+          "cpu_refine_time": 50.25,
+          "cpu_prepare_time": 8.26,
+          "cpu_time": 77.9
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 18.5,
+          "cpu_refine_time": 50.22,
+          "cpu_prepare_time": 8.25,
+          "cpu_time": 77.89
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.8459999999999999,
+        "cpu_partition_time": 18.578000000000003,
+        "cpu_refine_time": 50.289,
+        "cpu_prepare_time": 8.255,
+        "cpu_time": 77.96900000000001
+      },
+      "std_dev": {
+        "cpu_init_time": 0.06651315659326358,
+        "cpu_partition_time": 0.11608617488745206,
+        "cpu_refine_time": 0.09332202312423367,
+        "cpu_prepare_time": 0.01204159457879204,
+        "cpu_time": 0.1874273192466862
+      },
+      "std_err": {
+        "cpu_init_time": 0.021033306920215857,
+        "cpu_partition_time": 0.03670967175009891,
+        "cpu_refine_time": 0.029511014892748103,
+        "cpu_prepare_time": 0.003807886552931873,
+        "cpu_time": 0.05926972245590427
+      }
+    },
+    {
+      "threads": 2,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 13.77,
+          "cpu_refine_time": 34.74,
+          "cpu_prepare_time": 8.34,
+          "cpu_time": 57.58
+        },
+        {
+          "cpu_init_time": 0.85,
+          "cpu_partition_time": 13.76,
+          "cpu_refine_time": 34.73,
+          "cpu_prepare_time": 8.27,
+          "cpu_time": 57.61
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 13.77,
+          "cpu_refine_time": 35.16,
+          "cpu_prepare_time": 8.63,
+          "cpu_time": 58.45
+        },
+        {
+          "cpu_init_time": 0.83,
+          "cpu_partition_time": 13.77,
+          "cpu_refine_time": 35.1,
+          "cpu_prepare_time": 8.3,
+          "cpu_time": 57.99
+        },
+        {
+          "cpu_init_time": 0.85,
+          "cpu_partition_time": 13.81,
+          "cpu_refine_time": 35.1,
+          "cpu_prepare_time": 7.91,
+          "cpu_time": 57.66
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 13.77,
+          "cpu_refine_time": 35.08,
+          "cpu_prepare_time": 7.56,
+          "cpu_time": 57.14
+        },
+        {
+          "cpu_init_time": 0.93,
+          "cpu_partition_time": 13.82,
+          "cpu_refine_time": 34.7,
+          "cpu_prepare_time": 8.29,
+          "cpu_time": 57.74
+        },
+        {
+          "cpu_init_time": 0.86,
+          "cpu_partition_time": 13.78,
+          "cpu_refine_time": 34.65,
+          "cpu_prepare_time": 7.92,
+          "cpu_time": 57.21
+        },
+        {
+          "cpu_init_time": 0.85,
+          "cpu_partition_time": 13.72,
+          "cpu_refine_time": 35.04,
+          "cpu_prepare_time": 8.46,
+          "cpu_time": 58.08
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 13.74,
+          "cpu_refine_time": 35.09,
+          "cpu_prepare_time": 8.21,
+          "cpu_time": 57.96
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.8459999999999999,
+        "cpu_partition_time": 13.771,
+        "cpu_refine_time": 34.939,
+        "cpu_prepare_time": 8.189000000000002,
+        "cpu_time": 57.742000000000004
+      },
+      "std_dev": {
+        "cpu_init_time": 0.061188234163113434,
+        "cpu_partition_time": 0.02773084924772407,
+        "cpu_refine_time": 0.19429101883514835,
+        "cpu_prepare_time": 0.29429407061645013,
+        "cpu_time": 0.3768766376415502
+      },
+      "std_err": {
+        "cpu_init_time": 0.019349418595916525,
+        "cpu_partition_time": 0.008769264507357492,
+        "cpu_refine_time": 0.06144021484337434,
+        "cpu_prepare_time": 0.09306395650304157,
+        "cpu_time": 0.11917885718532475
+      }
+    },
+    {
+      "threads": 4,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.96,
+          "cpu_partition_time": 11.58,
+          "cpu_refine_time": 27.2,
+          "cpu_prepare_time": 8.04,
+          "cpu_time": 47.77
+        },
+        {
+          "cpu_init_time": 0.95,
+          "cpu_partition_time": 11.69,
+          "cpu_refine_time": 25.25,
+          "cpu_prepare_time": 9.34,
+          "cpu_time": 47.23
+        },
+        {
+          "cpu_init_time": 0.93,
+          "cpu_partition_time": 11.5,
+          "cpu_refine_time": 26.98,
+          "cpu_prepare_time": 9.83,
+          "cpu_time": 49.23
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 11.54,
+          "cpu_refine_time": 25.6,
+          "cpu_prepare_time": 9.07,
+          "cpu_time": 46.94
+        },
+        {
+          "cpu_init_time": 0.91,
+          "cpu_partition_time": 11.52,
+          "cpu_refine_time": 25.19,
+          "cpu_prepare_time": 9.44,
+          "cpu_time": 47.06
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 11.64,
+          "cpu_refine_time": 25.32,
+          "cpu_prepare_time": 9.32,
+          "cpu_time": 47.01
+        },
+        {
+          "cpu_init_time": 0.85,
+          "cpu_partition_time": 11.49,
+          "cpu_refine_time": 25.67,
+          "cpu_prepare_time": 8.99,
+          "cpu_time": 47.0
+        },
+        {
+          "cpu_init_time": 0.75,
+          "cpu_partition_time": 11.47,
+          "cpu_refine_time": 25.21,
+          "cpu_prepare_time": 7.5,
+          "cpu_time": 44.93
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 11.48,
+          "cpu_refine_time": 25.33,
+          "cpu_prepare_time": 8.02,
+          "cpu_time": 45.56
+        },
+        {
+          "cpu_init_time": 0.87,
+          "cpu_partition_time": 11.41,
+          "cpu_refine_time": 27.49,
+          "cpu_prepare_time": 9.49,
+          "cpu_time": 49.25
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.841,
+        "cpu_partition_time": 11.532,
+        "cpu_refine_time": 25.924,
+        "cpu_prepare_time": 8.904,
+        "cpu_time": 47.19799999999999
+      },
+      "std_dev": {
+        "cpu_init_time": 0.09213576938409969,
+        "cpu_partition_time": 0.07959899496852946,
+        "cpu_refine_time": 0.8709557968117551,
+        "cpu_prepare_time": 0.7338555716215556,
+        "cpu_time": 1.2905409718408782
+      },
+      "std_err": {
+        "cpu_init_time": 0.029135888522576415,
+        "cpu_partition_time": 0.02517141235608359,
+        "cpu_refine_time": 0.2754204059251963,
+        "cpu_prepare_time": 0.2320655079928941,
+        "cpu_time": 0.40810488847843984
+      }
+    },
+    {
+      "threads": 8,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 10.65,
+          "cpu_refine_time": 26.07,
+          "cpu_prepare_time": 9.05,
+          "cpu_time": 46.51
+        },
+        {
+          "cpu_init_time": 0.87,
+          "cpu_partition_time": 10.61,
+          "cpu_refine_time": 26.07,
+          "cpu_prepare_time": 8.89,
+          "cpu_time": 46.45
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 10.67,
+          "cpu_refine_time": 25.53,
+          "cpu_prepare_time": 8.81,
+          "cpu_time": 45.74
+        },
+        {
+          "cpu_init_time": 0.95,
+          "cpu_partition_time": 10.64,
+          "cpu_refine_time": 23.78,
+          "cpu_prepare_time": 9.37,
+          "cpu_time": 44.74
+        },
+        {
+          "cpu_init_time": 0.86,
+          "cpu_partition_time": 10.65,
+          "cpu_refine_time": 25.33,
+          "cpu_prepare_time": 9.67,
+          "cpu_time": 46.5
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 10.63,
+          "cpu_refine_time": 26.09,
+          "cpu_prepare_time": 9.13,
+          "cpu_time": 46.73
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 10.68,
+          "cpu_refine_time": 26.26,
+          "cpu_prepare_time": 9.81,
+          "cpu_time": 47.49
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 10.53,
+          "cpu_refine_time": 23.66,
+          "cpu_prepare_time": 9.24,
+          "cpu_time": 44.34
+        },
+        {
+          "cpu_init_time": 0.95,
+          "cpu_partition_time": 10.81,
+          "cpu_refine_time": 25.42,
+          "cpu_prepare_time": 9.26,
+          "cpu_time": 46.44
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 10.78,
+          "cpu_refine_time": 24.04,
+          "cpu_prepare_time": 9.66,
+          "cpu_time": 45.22
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.8370000000000001,
+        "cpu_partition_time": 10.665000000000001,
+        "cpu_refine_time": 25.225,
+        "cpu_prepare_time": 9.289,
+        "cpu_time": 46.016
+      },
+      "std_dev": {
+        "cpu_init_time": 0.08978307190111062,
+        "cpu_partition_time": 0.07619055059520184,
+        "cpu_refine_time": 0.965973602123785,
+        "cpu_prepare_time": 0.32172814611096723,
+        "cpu_time": 0.9314418929809838
+      },
+      "std_err": {
+        "cpu_init_time": 0.028391900253417344,
+        "cpu_partition_time": 0.024093567606313537,
+        "cpu_refine_time": 0.30546767423084237,
+        "cpu_prepare_time": 0.10173937290940999,
+        "cpu_time": 0.2945477889918711
+      }
+    },
+    {
+      "threads": 16,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.9,
+          "cpu_partition_time": 11.94,
+          "cpu_refine_time": 26.08,
+          "cpu_prepare_time": 9.49,
+          "cpu_time": 48.42
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 11.82,
+          "cpu_refine_time": 24.05,
+          "cpu_prepare_time": 9.59,
+          "cpu_time": 46.35
+        },
+        {
+          "cpu_init_time": 0.9,
+          "cpu_partition_time": 11.78,
+          "cpu_refine_time": 24.14,
+          "cpu_prepare_time": 9.47,
+          "cpu_time": 46.29
+        },
+        {
+          "cpu_init_time": 0.81,
+          "cpu_partition_time": 11.77,
+          "cpu_refine_time": 23.73,
+          "cpu_prepare_time": 9.56,
+          "cpu_time": 45.86
+        },
+        {
+          "cpu_init_time": 0.91,
+          "cpu_partition_time": 11.79,
+          "cpu_refine_time": 25.84,
+          "cpu_prepare_time": 9.76,
+          "cpu_time": 48.3
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 11.68,
+          "cpu_refine_time": 23.96,
+          "cpu_prepare_time": 9.41,
+          "cpu_time": 45.77
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 11.89,
+          "cpu_refine_time": 25.74,
+          "cpu_prepare_time": 8.06,
+          "cpu_time": 46.43
+        },
+        {
+          "cpu_init_time": 0.94,
+          "cpu_partition_time": 11.81,
+          "cpu_refine_time": 25.95,
+          "cpu_prepare_time": 8.12,
+          "cpu_time": 46.82
+        },
+        {
+          "cpu_init_time": 0.9,
+          "cpu_partition_time": 11.73,
+          "cpu_refine_time": 25.74,
+          "cpu_prepare_time": 9.35,
+          "cpu_time": 47.73
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 11.83,
+          "cpu_refine_time": 25.77,
+          "cpu_prepare_time": 9.35,
+          "cpu_time": 47.69
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.8450000000000001,
+        "cpu_partition_time": 11.803999999999998,
+        "cpu_refine_time": 25.1,
+        "cpu_prepare_time": 9.216,
+        "cpu_time": 46.966
+      },
+      "std_dev": {
+        "cpu_init_time": 0.07940403012442127,
+        "cpu_partition_time": 0.0704556598152342,
+        "cpu_refine_time": 0.9326950198215912,
+        "cpu_prepare_time": 0.5748773782294796,
+        "cpu_time": 0.938095943920449
+      },
+      "std_err": {
+        "cpu_init_time": 0.025109759058979438,
+        "cpu_partition_time": 0.022280035906613812,
+        "cpu_refine_time": 0.29494406249321214,
+        "cpu_prepare_time": 0.1817921890511251,
+        "cpu_time": 0.2966519846554205
+      }
+    }
+  ],
+  "pbsm/sequential": [
+    {
+      "threads": 1,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.81,
+          "cpu_partition_time": 14.44,
+          "cpu_refine_time": 49.75,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.6
+        },
+        {
+          "cpu_init_time": 0.95,
+          "cpu_partition_time": 14.37,
+          "cpu_refine_time": 49.72,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.64
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.75,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.7
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 14.37,
+          "cpu_refine_time": 49.67,
+          "cpu_prepare_time": 7.59,
+          "cpu_time": 72.55
+        },
+        {
+          "cpu_init_time": 0.85,
+          "cpu_partition_time": 14.36,
+          "cpu_refine_time": 49.7,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.51
+        },
+        {
+          "cpu_init_time": 0.91,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.75,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.69
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.43,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.62,
+          "cpu_time": 72.51
+        },
+        {
+          "cpu_init_time": 0.95,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.71,
+          "cpu_prepare_time": 7.75,
+          "cpu_time": 72.8
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.42,
+          "cpu_refine_time": 49.67,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.43
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.71,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.43
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.85,
+        "cpu_partition_time": 14.399000000000001,
+        "cpu_refine_time": 49.715999999999994,
+        "cpu_prepare_time": 7.619999999999999,
+        "cpu_time": 72.58600000000001
+      },
+      "std_dev": {
+        "cpu_init_time": 0.08843076387773657,
+        "cpu_partition_time": 0.02586503431275524,
+        "cpu_refine_time": 0.028705400188813738,
+        "cpu_prepare_time": 0.04404543109109051,
+        "cpu_time": 0.115861986863679
+      },
+      "std_err": {
+        "cpu_init_time": 0.027964262908219125,
+        "cpu_partition_time": 0.008179242018671448,
+        "cpu_refine_time": 0.009077444574327886,
+        "cpu_prepare_time": 0.013928388277184128,
+        "cpu_time": 0.036638777272173434
+      }
+    },
+    {
+      "threads": 2,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.46
+        },
+        {
+          "cpu_init_time": 0.93,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.65
+        },
+        {
+          "cpu_init_time": 0.95,
+          "cpu_partition_time": 14.37,
+          "cpu_refine_time": 49.7,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.64
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 14.38,
+          "cpu_refine_time": 49.71,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.43
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 14.43,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.62,
+          "cpu_time": 72.67
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.74,
+          "cpu_prepare_time": 7.59,
+          "cpu_time": 72.47
+        },
+        {
+          "cpu_init_time": 0.91,
+          "cpu_partition_time": 14.43,
+          "cpu_refine_time": 49.74,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.68
+        },
+        {
+          "cpu_init_time": 0.85,
+          "cpu_partition_time": 14.42,
+          "cpu_refine_time": 49.72,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.59
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 14.42,
+          "cpu_refine_time": 49.75,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.69
+        },
+        {
+          "cpu_init_time": 0.95,
+          "cpu_partition_time": 14.4,
+          "cpu_refine_time": 49.74,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.69
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.86,
+        "cpu_partition_time": 14.404,
+        "cpu_refine_time": 49.729,
+        "cpu_prepare_time": 7.6049999999999995,
+        "cpu_time": 72.59700000000001
+      },
+      "std_dev": {
+        "cpu_init_time": 0.08740709353364863,
+        "cpu_partition_time": 0.020099751242241653,
+        "cpu_refine_time": 0.014456832294800737,
+        "cpu_prepare_time": 0.008062257748298763,
+        "cpu_time": 0.09849365461795033
+      },
+      "std_err": {
+        "cpu_init_time": 0.027640549922170507,
+        "cpu_partition_time": 0.006356099432828241,
+        "cpu_refine_time": 0.004571651780264913,
+        "cpu_prepare_time": 0.00254950975679646,
+        "cpu_time": 0.031146428366668442
+      }
+    },
+    {
+      "threads": 4,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.9,
+          "cpu_partition_time": 14.4,
+          "cpu_refine_time": 49.71,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.61
+        },
+        {
+          "cpu_init_time": 0.88,
+          "cpu_partition_time": 14.4,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.63,
+          "cpu_time": 72.64
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 14.42,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.67
+        },
+        {
+          "cpu_init_time": 0.94,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.68
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.72,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.6
+        },
+        {
+          "cpu_init_time": 0.91,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.71,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.62
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.64
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.37,
+          "cpu_refine_time": 49.7,
+          "cpu_prepare_time": 7.62,
+          "cpu_time": 72.42
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.68,
+          "cpu_prepare_time": 7.62,
+          "cpu_time": 72.42
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.71,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.45
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.8550000000000001,
+        "cpu_partition_time": 14.393,
+        "cpu_refine_time": 49.714999999999996,
+        "cpu_prepare_time": 7.611,
+        "cpu_time": 72.575
+      },
+      "std_dev": {
+        "cpu_init_time": 0.08333666660000268,
+        "cpu_partition_time": 0.011874342087038008,
+        "cpu_refine_time": 0.015652475842497002,
+        "cpu_prepare_time": 0.009433981132056714,
+        "cpu_time": 0.09800510190801304
+      },
+      "std_err": {
+        "cpu_init_time": 0.026353367906208878,
+        "cpu_partition_time": 0.003754996671103746,
+        "cpu_refine_time": 0.004949747468305349,
+        "cpu_prepare_time": 0.002983286778035294,
+        "cpu_time": 0.030991934434623503
+      }
+    },
+    {
+      "threads": 8,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.76,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.74,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.48
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.77,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.49
+        },
+        {
+          "cpu_init_time": 0.85,
+          "cpu_partition_time": 14.4,
+          "cpu_refine_time": 49.72,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.57
+        },
+        {
+          "cpu_init_time": 0.92,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.7,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.65
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 14.4,
+          "cpu_refine_time": 49.7,
+          "cpu_prepare_time": 7.58,
+          "cpu_time": 72.57
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.71,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.45
+        },
+        {
+          "cpu_init_time": 0.96,
+          "cpu_partition_time": 14.38,
+          "cpu_refine_time": 49.69,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.63
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 14.42,
+          "cpu_refine_time": 49.75,
+          "cpu_prepare_time": 7.62,
+          "cpu_time": 72.68
+        },
+        {
+          "cpu_init_time": 0.97,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.78,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.76
+        },
+        {
+          "cpu_init_time": 0.73,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.73,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.48
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.844,
+        "cpu_partition_time": 14.4,
+        "cpu_refine_time": 49.729,
+        "cpu_prepare_time": 7.603999999999999,
+        "cpu_time": 72.576
+      },
+      "std_dev": {
+        "cpu_init_time": 0.09123595782365634,
+        "cpu_partition_time": 0.01183215956619898,
+        "cpu_refine_time": 0.02913760456866735,
+        "cpu_prepare_time": 0.0101980390271857,
+        "cpu_time": 0.09738583059152006
+      },
+      "std_err": {
+        "cpu_init_time": 0.02885134312298129,
+        "cpu_partition_time": 0.0037416573867738614,
+        "cpu_refine_time": 0.009214119599831686,
+        "cpu_prepare_time": 0.003224903099319461,
+        "cpu_time": 0.030796103649650623
+      }
+    },
+    {
+      "threads": 16,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_init_time": 0.94,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.76,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.69
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 14.38,
+          "cpu_refine_time": 49.7,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.58
+        },
+        {
+          "cpu_init_time": 0.86,
+          "cpu_partition_time": 14.38,
+          "cpu_refine_time": 49.83,
+          "cpu_prepare_time": 7.61,
+          "cpu_time": 72.68
+        },
+        {
+          "cpu_init_time": 0.89,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.71,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.61
+        },
+        {
+          "cpu_init_time": 0.85,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.82,
+          "cpu_prepare_time": 7.62,
+          "cpu_time": 72.69
+        },
+        {
+          "cpu_init_time": 0.95,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.68,
+          "cpu_prepare_time": 7.59,
+          "cpu_time": 72.62
+        },
+        {
+          "cpu_init_time": 0.88,
+          "cpu_partition_time": 14.4,
+          "cpu_refine_time": 49.72,
+          "cpu_prepare_time": 7.62,
+          "cpu_time": 72.62
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 14.41,
+          "cpu_refine_time": 49.74,
+          "cpu_prepare_time": 7.59,
+          "cpu_time": 72.48
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 14.39,
+          "cpu_refine_time": 49.69,
+          "cpu_prepare_time": 7.6,
+          "cpu_time": 72.42
+        },
+        {
+          "cpu_init_time": 0.74,
+          "cpu_partition_time": 14.37,
+          "cpu_refine_time": 49.7,
+          "cpu_prepare_time": 7.59,
+          "cpu_time": 72.4
+        }
+      ],
+      "average": {
+        "cpu_init_time": 0.8480000000000001,
+        "cpu_partition_time": 14.395,
+        "cpu_refine_time": 49.735,
+        "cpu_prepare_time": 7.604000000000001,
+        "cpu_time": 72.579
+      },
+      "std_dev": {
+        "cpu_init_time": 0.07652450587883596,
+        "cpu_partition_time": 0.01431782106327636,
+        "cpu_refine_time": 0.050249378105603926,
+        "cpu_prepare_time": 0.011135528725660204,
+        "cpu_time": 0.10309704166463639
+      },
+      "std_err": {
+        "cpu_init_time": 0.024199173539606673,
+        "cpu_partition_time": 0.00452769256906871,
+        "cpu_refine_time": 0.015890248582070537,
+        "cpu_prepare_time": 0.0035213633723318524,
+        "cpu_time": 0.03260214716855282
+      }
+    }
+  ],
+  "sweep/parallel": [
+    {
+      "threads": 1,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_partition_time": 40.1,
+          "cpu_join_time": 93.71,
+          "cpu_time": 133.81
+        },
+        {
+          "cpu_partition_time": 40.14,
+          "cpu_join_time": 93.73,
+          "cpu_time": 133.86
+        },
+        {
+          "cpu_partition_time": 40.13,
+          "cpu_join_time": 94.01,
+          "cpu_time": 134.14
+        },
+        {
+          "cpu_partition_time": 40.09,
+          "cpu_join_time": 93.8,
+          "cpu_time": 133.89
+        },
+        {
+          "cpu_partition_time": 40.17,
+          "cpu_join_time": 93.81,
+          "cpu_time": 133.98
+        },
+        {
+          "cpu_partition_time": 40.22,
+          "cpu_join_time": 93.8,
+          "cpu_time": 134.02
+        },
+        {
+          "cpu_partition_time": 40.28,
+          "cpu_join_time": 93.75,
+          "cpu_time": 134.03
+        },
+        {
+          "cpu_partition_time": 40.12,
+          "cpu_join_time": 93.83,
+          "cpu_time": 133.95
+        },
+        {
+          "cpu_partition_time": 40.13,
+          "cpu_join_time": 93.74,
+          "cpu_time": 133.87
+        },
+        {
+          "cpu_partition_time": 40.42,
+          "cpu_join_time": 94.24,
+          "cpu_time": 134.66
+        }
+      ],
+      "average": {
+        "cpu_partition_time": 40.18,
+        "cpu_join_time": 93.84200000000001,
+        "cpu_time": 134.02100000000002
+      },
+      "std_dev": {
+        "cpu_partition_time": 0.09695359714832649,
+        "cpu_join_time": 0.1549709650224841,
+        "cpu_time": 0.2323122898169599
+      },
+      "std_err": {
+        "cpu_partition_time": 0.030659419433511755,
+        "cpu_join_time": 0.049006122066533674,
+        "cpu_time": 0.07346359642707342
+      }
+    },
+    {
+      "threads": 2,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_partition_time": 29.99,
+          "cpu_join_time": 64.71,
+          "cpu_time": 94.7
+        },
+        {
+          "cpu_partition_time": 29.93,
+          "cpu_join_time": 64.68,
+          "cpu_time": 94.61
+        },
+        {
+          "cpu_partition_time": 29.93,
+          "cpu_join_time": 64.68,
+          "cpu_time": 94.61
+        },
+        {
+          "cpu_partition_time": 29.92,
+          "cpu_join_time": 64.71,
+          "cpu_time": 94.62
+        },
+        {
+          "cpu_partition_time": 29.95,
+          "cpu_join_time": 64.8,
+          "cpu_time": 94.75
+        },
+        {
+          "cpu_partition_time": 29.83,
+          "cpu_join_time": 64.68,
+          "cpu_time": 94.51
+        },
+        {
+          "cpu_partition_time": 29.89,
+          "cpu_join_time": 64.77,
+          "cpu_time": 94.66
+        },
+        {
+          "cpu_partition_time": 29.98,
+          "cpu_join_time": 64.62,
+          "cpu_time": 94.59
+        },
+        {
+          "cpu_partition_time": 29.96,
+          "cpu_join_time": 64.6,
+          "cpu_time": 94.56
+        },
+        {
+          "cpu_partition_time": 30.02,
+          "cpu_join_time": 64.53,
+          "cpu_time": 94.55
+        }
+      ],
+      "average": {
+        "cpu_partition_time": 29.939999999999998,
+        "cpu_join_time": 64.678,
+        "cpu_time": 94.61599999999999
+      },
+      "std_dev": {
+        "cpu_partition_time": 0.051185935568278995,
+        "cpu_join_time": 0.07533923280734804,
+        "cpu_time": 0.0681469001496026
+      },
+      "std_err": {
+        "cpu_partition_time": 0.016186414056238673,
+        "cpu_join_time": 0.023824357284090134,
+        "cpu_time": 0.02154994199528135
+      }
+    },
+    {
+      "threads": 4,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_partition_time": 20.85,
+          "cpu_join_time": 56.11,
+          "cpu_time": 76.96
+        },
+        {
+          "cpu_partition_time": 20.81,
+          "cpu_join_time": 56.22,
+          "cpu_time": 77.03
+        },
+        {
+          "cpu_partition_time": 21.16,
+          "cpu_join_time": 55.92,
+          "cpu_time": 77.08
+        },
+        {
+          "cpu_partition_time": 20.78,
+          "cpu_join_time": 55.98,
+          "cpu_time": 76.75
+        },
+        {
+          "cpu_partition_time": 20.97,
+          "cpu_join_time": 56.06,
+          "cpu_time": 77.03
+        },
+        {
+          "cpu_partition_time": 21.02,
+          "cpu_join_time": 56.08,
+          "cpu_time": 77.1
+        },
+        {
+          "cpu_partition_time": 20.92,
+          "cpu_join_time": 56.03,
+          "cpu_time": 76.95
+        },
+        {
+          "cpu_partition_time": 20.89,
+          "cpu_join_time": 56.02,
+          "cpu_time": 76.91
+        },
+        {
+          "cpu_partition_time": 20.9,
+          "cpu_join_time": 56.13,
+          "cpu_time": 77.03
+        },
+        {
+          "cpu_partition_time": 20.95,
+          "cpu_join_time": 56.2,
+          "cpu_time": 77.15
+        }
+      ],
+      "average": {
+        "cpu_partition_time": 20.924999999999997,
+        "cpu_join_time": 56.075,
+        "cpu_time": 76.999
+      },
+      "std_dev": {
+        "cpu_partition_time": 0.1042353107157069,
+        "cpu_join_time": 0.08902246907382437,
+        "cpu_time": 0.1078378412246839
+      },
+      "std_err": {
+        "cpu_partition_time": 0.032962099447698956,
+        "cpu_join_time": 0.028151376520518523,
+        "cpu_time": 0.03410131962256026
+      }
+    },
+    {
+      "threads": 8,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_partition_time": 18.49,
+          "cpu_join_time": 30.42,
+          "cpu_time": 48.91
+        },
+        {
+          "cpu_partition_time": 19.28,
+          "cpu_join_time": 30.91,
+          "cpu_time": 50.19
+        },
+        {
+          "cpu_partition_time": 18.64,
+          "cpu_join_time": 30.78,
+          "cpu_time": 49.42
+        },
+        {
+          "cpu_partition_time": 18.29,
+          "cpu_join_time": 30.48,
+          "cpu_time": 48.76
+        },
+        {
+          "cpu_partition_time": 18.55,
+          "cpu_join_time": 30.58,
+          "cpu_time": 49.13
+        },
+        {
+          "cpu_partition_time": 18.84,
+          "cpu_join_time": 30.53,
+          "cpu_time": 49.37
+        },
+        {
+          "cpu_partition_time": 19.04,
+          "cpu_join_time": 31.01,
+          "cpu_time": 50.05
+        },
+        {
+          "cpu_partition_time": 18.64,
+          "cpu_join_time": 30.59,
+          "cpu_time": 49.24
+        },
+        {
+          "cpu_partition_time": 19.28,
+          "cpu_join_time": 30.8,
+          "cpu_time": 50.08
+        },
+        {
+          "cpu_partition_time": 19.04,
+          "cpu_join_time": 30.67,
+          "cpu_time": 49.71
+        }
+      ],
+      "average": {
+        "cpu_partition_time": 18.808999999999997,
+        "cpu_join_time": 30.677000000000003,
+        "cpu_time": 49.486
+      },
+      "std_dev": {
+        "cpu_partition_time": 0.3235258876813419,
+        "cpu_join_time": 0.1828688054316538,
+        "cpu_time": 0.477560467375598
+      },
+      "std_err": {
+        "cpu_partition_time": 0.10230786871008517,
+        "cpu_join_time": 0.057828193815819676,
+        "cpu_time": 0.15101787973614236
+      }
+    },
+    {
+      "threads": 16,
+      "executable": "host",
+      "runs": [
+        {
+          "cpu_partition_time": 18.83,
+          "cpu_join_time": 20.3,
+          "cpu_time": 39.13
+        },
+        {
+          "cpu_partition_time": 18.59,
+          "cpu_join_time": 20.26,
+          "cpu_time": 38.85
+        },
+        {
+          "cpu_partition_time": 18.08,
+          "cpu_join_time": 19.97,
+          "cpu_time": 38.05
+        },
+        {
+          "cpu_partition_time": 18.4,
+          "cpu_join_time": 20.06,
+          "cpu_time": 38.47
+        },
+        {
+          "cpu_partition_time": 18.07,
+          "cpu_join_time": 19.85,
+          "cpu_time": 37.92
+        },
+        {
+          "cpu_partition_time": 19.15,
+          "cpu_join_time": 20.08,
+          "cpu_time": 39.23
+        },
+        {
+          "cpu_partition_time": 18.71,
+          "cpu_join_time": 20.05,
+          "cpu_time": 38.76
+        },
+        {
+          "cpu_partition_time": 18.27,
+          "cpu_join_time": 20.26,
+          "cpu_time": 38.54
+        },
+        {
+          "cpu_partition_time": 18.73,
+          "cpu_join_time": 21.36,
+          "cpu_time": 40.09
+        },
+        {
+          "cpu_partition_time": 18.16,
+          "cpu_join_time": 19.86,
+          "cpu_time": 38.02
+        }
+      ],
+      "average": {
+        "cpu_partition_time": 18.499000000000002,
+        "cpu_join_time": 20.205000000000002,
+        "cpu_time": 38.705999999999996
+      },
+      "std_dev": {
+        "cpu_partition_time": 0.3429708442418975,
+        "cpu_join_time": 0.4135275081539316,
+        "cpu_time": 0.632094929579411
+      },
+      "std_err": {
+        "cpu_partition_time": 0.10845690388352412,
+        "cpu_join_time": 0.13076888009002752,
+        "cpu_time": 0.19988596749146764
+      }
+    }
+  ]
+}

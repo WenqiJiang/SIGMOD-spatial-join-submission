@@ -1,0 +1,58 @@
+{
+  "simple": [
+    {
+      "input_size": 1000,
+      "average_time_ms": 0.006695,
+      "cycles": 1339.0,
+      "cycles_per_page": 1.339
+    },
+    {
+      "input_size": 5000,
+      "average_time_ms": 0.029305,
+      "cycles": 5861.0,
+      "cycles_per_page": 1.1722
+    },
+    {
+      "input_size": 10000,
+      "average_time_ms": 0.0562,
+      "cycles": 11239.999999999998,
+      "cycles_per_page": 1.1239999999999999
+    },
+    {
+      "input_size": 50000,
+      "average_time_ms": 0.27397,
+      "cycles": 54793.99999999999,
+      "cycles_per_page": 1.09588
+    }
+  ],
+  "meta": [
+    {
+      "P": 6,
+      "D": 1000,
+      "average_time_ms": 0.006695,
+      "cycles": 1339.0,
+      "cycles_per_page": 1.331013916500994
+    },
+    {
+      "P": 30,
+      "D": 5000,
+      "average_time_ms": 0.027895,
+      "cycles": 5578.999999999999,
+      "cycles_per_page": 1.109145129224652
+    },
+    {
+      "P": 60,
+      "D": 10000,
+      "average_time_ms": 0.05618,
+      "cycles": 11236.0,
+      "cycles_per_page": 1.1168986083499006
+    },
+    {
+      "P": 303,
+      "D": 50000,
+      "average_time_ms": 0.27527,
+      "cycles": 55054.0,
+      "cycles_per_page": 1.0944476472576188
+    }
+  ]
+}

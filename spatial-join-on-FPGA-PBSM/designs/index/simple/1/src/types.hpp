@@ -1,0 +1,42 @@
+#pragma once
+
+#include <ap_int.h>
+#include <hls_stream.h>
+
+#include "constants.hpp"
+
+typedef struct {
+    // minimum bounding rectangle
+    float low0;
+    float high0;
+    float low1;
+    float high1;
+} mbr_t;
+
+typedef struct {
+    // obj id for data nodes; pointer to children for directory nodes
+    int id;
+    // minimum bounding rectangle
+    float low0;
+    float high0;
+    float low1;
+    float high1;
+} obj_t;
+
+typedef struct {
+    // 7 * 4 bytes = 28 bytes
+    int is_leaf;  // bool
+    int count;    // valid items
+    obj_t obj;    // id/ptr + mbr
+} node_meta_t;
+
+typedef struct {
+    int id_A;
+    int id_B;
+    bool last;
+} result_t;
+
+struct task_t {
+    ap_uint<512> page;
+    int num_objects;
+};

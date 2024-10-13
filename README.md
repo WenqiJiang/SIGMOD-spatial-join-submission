@@ -1,6 +1,10 @@
 # SwiftSpatial: Spatial Joins on Modern Hardware
 
-## spatial-join-on-FPGA
+## spatial-join-on-FPGA-R-Tree
+
+All the FPGA code with historical versions. Written in Vitis HLS C++.
+
+## spatial-join-on-FPGA-PBSM
 
 All the FPGA code with historical versions. Written in Vitis HLS C++.
 

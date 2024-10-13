@@ -1,0 +1,470 @@
+{
+  "OSM, 50K x 100K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/osm/bin/OSM_50000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          247.82,
+          247.77,
+          247.79
+        ],
+        "total_time": [
+          248.83,
+          248.87,
+          248.78
+        ],
+        "compute_unit_avg_time": [
+          247.517,
+          247.515,
+          247.518
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/osm/bin/OSM_50000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          151.37,
+          151.34,
+          151.34
+        ],
+        "total_time": [
+          152.5,
+          152.48,
+          152.42
+        ],
+        "compute_unit_avg_time": [
+          151.019,
+          151.018,
+          151.018
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/osm/bin/OSM_50000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          151.17,
+          151.2,
+          151.1
+        ],
+        "total_time": [
+          152.23,
+          152.44,
+          152.19
+        ],
+        "compute_unit_avg_time": [
+          150.85,
+          150.85,
+          150.852
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/osm/bin/OSM_50000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          151.38,
+          151.26,
+          151.27
+        ],
+        "total_time": [
+          152.47,
+          152.41,
+          152.4
+        ],
+        "compute_unit_avg_time": [
+          151.063,
+          150.889,
+          150.943
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/osm/bin/OSM_50000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          151.32,
+          151.3,
+          151.3
+        ],
+        "total_time": [
+          152.59,
+          152.6,
+          152.6
+        ],
+        "compute_unit_avg_time": [
+          150.996,
+          150.908,
+          150.971
+        ]
+      }
+    }
+  ],
+  "OSM, 100K x 100K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/osm/bin/OSM_100000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          494.18,
+          494.31,
+          494.25
+        ],
+        "total_time": [
+          495.62,
+          495.75,
+          495.53
+        ],
+        "compute_unit_avg_time": [
+          493.957,
+          493.96,
+          493.965
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/osm/bin/OSM_100000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          301.77,
+          301.74,
+          301.76
+        ],
+        "total_time": [
+          303.17,
+          303.05,
+          303.07
+        ],
+        "compute_unit_avg_time": [
+          301.41,
+          301.411,
+          301.409
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/osm/bin/OSM_100000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          301.93,
+          301.82,
+          301.87
+        ],
+        "total_time": [
+          303.31,
+          303.22,
+          303.18
+        ],
+        "compute_unit_avg_time": [
+          301.556,
+          301.557,
+          301.557
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/osm/bin/OSM_100000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          302.09,
+          301.9,
+          301.84
+        ],
+        "total_time": [
+          303.35,
+          303.35,
+          303.24
+        ],
+        "compute_unit_avg_time": [
+          301.722,
+          301.508,
+          301.527
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/osm/bin/OSM_100000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_100000_polygon_file_1.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          302.13,
+          302.26,
+          301.98
+        ],
+        "total_time": [
+          303.45,
+          303.71,
+          303.29
+        ],
+        "compute_unit_avg_time": [
+          301.881,
+          301.858,
+          301.663
+        ]
+      }
+    }
+  ],
+  "OSM, 200K x 200K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/osm/bin/OSM_200000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_200000_polygon_file_1.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          887.68,
+          887.76,
+          887.77
+        ],
+        "total_time": [
+          889.57,
+          889.63,
+          889.73
+        ],
+        "compute_unit_avg_time": [
+          887.392,
+          887.406,
+          887.375
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/osm/bin/OSM_200000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_200000_polygon_file_1.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          537.29,
+          537.33,
+          537.3
+        ],
+        "total_time": [
+          539.32,
+          539.19,
+          539.29
+        ],
+        "compute_unit_avg_time": [
+          536.956,
+          536.956,
+          536.956
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/osm/bin/OSM_200000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_200000_polygon_file_1.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          537.07,
+          537.13,
+          537.08
+        ],
+        "total_time": [
+          538.92,
+          538.97,
+          538.94
+        ],
+        "compute_unit_avg_time": [
+          536.865,
+          536.86,
+          536.874
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/osm/bin/OSM_200000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_200000_polygon_file_1.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          536.86,
+          536.82,
+          536.85
+        ],
+        "total_time": [
+          538.84,
+          538.68,
+          538.78
+        ],
+        "compute_unit_avg_time": [
+          536.501,
+          536.501,
+          536.501
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/osm/bin/OSM_200000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_200000_polygon_file_1.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          537.12,
+          536.95,
+          537.03
+        ],
+        "total_time": [
+          539.02,
+          538.91,
+          538.91
+        ],
+        "compute_unit_avg_time": [
+          536.795,
+          536.562,
+          536.641
+        ]
+      }
+    }
+  ],
+  "OSM, 1M x 1M": [
+    {
+      "version": 1,
+      "input1": "../../../../data/osm/bin/OSM_1000000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_1000000_polygon_file_1.bin",
+      "additional_args": "2 16 1200240",
+      "times": {
+        "kernel_time": [
+          5445.12,
+          5445.15,
+          5445.26
+        ],
+        "total_time": [
+          5452.05,
+          5452.27,
+          5452.47
+        ],
+        "compute_unit_avg_time": [
+          5444.79,
+          5444.79,
+          5444.8
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/osm/bin/OSM_1000000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_1000000_polygon_file_1.bin",
+      "additional_args": "2 16 1200240",
+      "times": {
+        "kernel_time": [
+          3179.69,
+          3179.76,
+          3179.7
+        ],
+        "total_time": [
+          3187.07,
+          3186.83,
+          3186.49
+        ],
+        "compute_unit_avg_time": [
+          3179.34,
+          3179.34,
+          3179.34
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/osm/bin/OSM_1000000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_1000000_polygon_file_1.bin",
+      "additional_args": "2 16 1200240",
+      "times": {
+        "kernel_time": [
+          3180.05,
+          3179.84,
+          3179.97
+        ],
+        "total_time": [
+          3186.9,
+          3187.18,
+          3187.03
+        ],
+        "compute_unit_avg_time": [
+          3179.52,
+          3179.52,
+          3179.52
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/osm/bin/OSM_1000000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_1000000_polygon_file_1.bin",
+      "additional_args": "2 16 1200240",
+      "times": {
+        "kernel_time": [
+          3179.72,
+          3180.16,
+          3179.62
+        ],
+        "total_time": [
+          3187.04,
+          3187.35,
+          3186.74
+        ],
+        "compute_unit_avg_time": [
+          3179.29,
+          3179.73,
+          3179.29
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/osm/bin/OSM_1000000_polygon_file_0.bin",
+      "input2": "../../../../data/tree/tree_OSM_1000000_polygon_file_1.bin",
+      "additional_args": "2 16 1200240",
+      "times": {
+        "kernel_time": [
+          3179.29,
+          3179.9,
+          3179.56
+        ],
+        "total_time": [
+          3186.49,
+          3187.06,
+          3186.71
+        ],
+        "compute_unit_avg_time": [
+          3178.85,
+          3179.6,
+          3179.18
+        ]
+      }
+    }
+  ]
+}

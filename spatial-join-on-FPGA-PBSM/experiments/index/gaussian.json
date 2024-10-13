@@ -1,0 +1,470 @@
+{
+  "Gaussian, 50K x 100K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/gaussian/bin/gaussian_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          252.58,
+          252.59,
+          252.49
+        ],
+        "total_time": [
+          253.79,
+          253.62,
+          253.6
+        ],
+        "compute_unit_avg_time": [
+          252.353,
+          252.354,
+          252.352
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/gaussian/bin/gaussian_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          154.55,
+          154.63,
+          154.56
+        ],
+        "total_time": [
+          155.78,
+          155.97,
+          155.76
+        ],
+        "compute_unit_avg_time": [
+          154.303,
+          154.301,
+          154.303
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/gaussian/bin/gaussian_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          154.57,
+          154.6,
+          154.63
+        ],
+        "total_time": [
+          155.67,
+          155.77,
+          155.66
+        ],
+        "compute_unit_avg_time": [
+          154.344,
+          154.345,
+          154.345
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/gaussian/bin/gaussian_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          154.65,
+          154.59,
+          154.69
+        ],
+        "total_time": [
+          155.71,
+          155.62,
+          155.88
+        ],
+        "compute_unit_avg_time": [
+          154.329,
+          154.32,
+          154.333
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/gaussian/bin/gaussian_50000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          154.67,
+          154.6,
+          154.39
+        ],
+        "total_time": [
+          155.89,
+          155.84,
+          155.48
+        ],
+        "compute_unit_avg_time": [
+          154.329,
+          154.323,
+          154.28
+        ]
+      }
+    }
+  ],
+  "Gaussian, 100K x 100K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/gaussian/bin/gaussian_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          505.61,
+          505.46,
+          505.51
+        ],
+        "total_time": [
+          507.02,
+          506.67,
+          506.96
+        ],
+        "compute_unit_avg_time": [
+          505.252,
+          505.252,
+          505.254
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/gaussian/bin/gaussian_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          308.99,
+          308.93,
+          308.85
+        ],
+        "total_time": [
+          310.11,
+          310.31,
+          310.12
+        ],
+        "compute_unit_avg_time": [
+          308.635,
+          308.635,
+          308.635
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/gaussian/bin/gaussian_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          308.87,
+          308.97,
+          308.9
+        ],
+        "total_time": [
+          310.02,
+          310.35,
+          310.26
+        ],
+        "compute_unit_avg_time": [
+          308.699,
+          308.699,
+          308.698
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/gaussian/bin/gaussian_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          308.88,
+          308.99,
+          308.97
+        ],
+        "total_time": [
+          309.96,
+          310.36,
+          310.07
+        ],
+        "compute_unit_avg_time": [
+          308.616,
+          308.747,
+          308.754
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/gaussian/bin/gaussian_100000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_100000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 120040",
+      "times": {
+        "kernel_time": [
+          308.7,
+          308.84,
+          308.72
+        ],
+        "total_time": [
+          309.87,
+          310.13,
+          309.95
+        ],
+        "compute_unit_avg_time": [
+          308.462,
+          308.524,
+          308.518
+        ]
+      }
+    }
+  ],
+  "Gaussian, 200K x 200K": [
+    {
+      "version": 1,
+      "input1": "../../../../data/gaussian/bin/gaussian_200000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_200000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          1061.59,
+          1061.49,
+          1061.69
+        ],
+        "total_time": [
+          1063.37,
+          1063.4,
+          1063.55
+        ],
+        "compute_unit_avg_time": [
+          1061.28,
+          1061.29,
+          1061.29
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/gaussian/bin/gaussian_200000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_200000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          639.25,
+          639.1,
+          639.14
+        ],
+        "total_time": [
+          641.15,
+          641.19,
+          640.88
+        ],
+        "compute_unit_avg_time": [
+          638.905,
+          638.905,
+          638.905
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/gaussian/bin/gaussian_200000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_200000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          639.52,
+          639.59,
+          639.5
+        ],
+        "total_time": [
+          641.3,
+          641.29,
+          641.33
+        ],
+        "compute_unit_avg_time": [
+          639.248,
+          639.251,
+          639.248
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/gaussian/bin/gaussian_200000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_200000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          639.45,
+          639.1,
+          639.04
+        ],
+        "total_time": [
+          641.29,
+          640.97,
+          640.82
+        ],
+        "compute_unit_avg_time": [
+          639.113,
+          638.83,
+          638.768
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/gaussian/bin/gaussian_200000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_200000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 230240",
+      "times": {
+        "kernel_time": [
+          639.06,
+          639.14,
+          638.76
+        ],
+        "total_time": [
+          640.89,
+          641.01,
+          641.14
+        ],
+        "compute_unit_avg_time": [
+          638.862,
+          638.816,
+          638.619
+        ]
+      }
+    }
+  ],
+  "Gaussian, 1M x 1M": [
+    {
+      "version": 1,
+      "input1": "../../../../data/gaussian/bin/gaussian_1000000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_1000000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          6157.2,
+          6157.22,
+          6157.24
+        ],
+        "total_time": [
+          6162.7,
+          6162.63,
+          6163.13
+        ],
+        "compute_unit_avg_time": [
+          6156.8,
+          6156.77,
+          6156.75
+        ]
+      }
+    },
+    {
+      "version": 2,
+      "input1": "../../../../data/gaussian/bin/gaussian_1000000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_1000000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          3599.69,
+          3599.64,
+          3599.65
+        ],
+        "total_time": [
+          3605.32,
+          3605.12,
+          3604.95
+        ],
+        "compute_unit_avg_time": [
+          3599.37,
+          3599.37,
+          3599.38
+        ]
+      }
+    },
+    {
+      "version": 4,
+      "input1": "../../../../data/gaussian/bin/gaussian_1000000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_1000000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          3598.36,
+          3598.4,
+          3598.42
+        ],
+        "total_time": [
+          3603.96,
+          3603.43,
+          3604.11
+        ],
+        "compute_unit_avg_time": [
+          3598.15,
+          3598.15,
+          3598.15
+        ]
+      }
+    },
+    {
+      "version": 8,
+      "input1": "../../../../data/gaussian/bin/gaussian_1000000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_1000000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          3599.26,
+          3599.37,
+          3599.3
+        ],
+        "total_time": [
+          3605.1,
+          3605.18,
+          3605.15
+        ],
+        "compute_unit_avg_time": [
+          3598.85,
+          3599.05,
+          3598.97
+        ]
+      }
+    },
+    {
+      "version": 16,
+      "input1": "../../../../data/gaussian/bin/gaussian_1000000_polygon_file_0_set_0.bin",
+      "input2": "../../../../data/tree/tree_gaussian_1000000_polygon_file_1_set_0.bin",
+      "additional_args": "2 16 60240",
+      "times": {
+        "kernel_time": [
+          3598.61,
+          3598.35,
+          3600.38
+        ],
+        "total_time": [
+          3604.35,
+          3603.99,
+          3606.37
+        ],
+        "compute_unit_avg_time": [
+          3598.29,
+          3597.94,
+          3600.02
+        ]
+      }
+    }
+  ]
+}

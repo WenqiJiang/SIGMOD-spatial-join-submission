@@ -1,0 +1,25 @@
+#pragma once
+
+// partitioning
+#define MAX_OBJS_PER_PARTITION 100
+
+#define PAGE_SIZE_BYTES 64
+
+// data
+#define MAX_OBJS_PER_PAGE 3
+// 20 bytes (1 * id + 4 * boundary)
+#define OBJ_SIZE_BYTES 20
+// 20 bytes (1 * id + 4 * boundary)
+#define OBJ_SIZE_BITS (OBJ_SIZE_BYTES * 8)
+
+// meta
+#define MAX_META_PER_PAGE 5
+// 12 bytes
+#define META_SIZE_BYTES 12
+#define META_SIZE_BITS (META_SIZE_BYTES * 8)
+
+// parallelisation
+#define N_JOIN_UNITS 1
+
+// write
+#define MAX_WRITE_BURST_SIZE 32

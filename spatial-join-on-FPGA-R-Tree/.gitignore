@@ -1,0 +1,6 @@
+**/.ipcache
+tree_bin
+**/*json
+**/*xml
+**/*summary
+**/.run
